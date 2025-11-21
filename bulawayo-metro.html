@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZimTour | Provinces</title>
-    
-    <!-- Tailwind CSS -->
+    <title>ZimTour | Bulawayo Metro</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
         tailwind.config = {
@@ -36,18 +32,14 @@
         }
     </script>
 
-
     <style>
-        /* --- Core Aesthetics --- */
         body {
             background-color: #0B0F12;
             color: #f8fafc;
             overflow-x: hidden;
-            cursor: none; /* Hiding default cursor for custom one */
+            cursor: none;
         }
 
-
-        /* Custom Cursor */
         .cursor-dot,
         .cursor-outline {
             position: fixed;
@@ -87,17 +79,6 @@
             }
         }
 
-
-        /* Smooth Scroll Behavior Override for Horizontal Section */
-        .horizontal-scroll-container {
-            width: 500%; /* Width depends on number of slides */
-            height: 100%;
-            display: flex;
-            flex-wrap: nowrap;
-        }
-
-
-        /* Glassmorphism */
         .glass-panel {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
@@ -110,8 +91,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-
-        /* Preloader */
         #preloader {
             position: fixed;
             inset: 0;
@@ -124,19 +103,11 @@
         .loader-text {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
-        .char {
-            transform: translateY(115%);
-            transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
-
-
-        /* Typography */
         .text-outline {
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
             color: transparent;
         }
-        
-        /* Marquee */
+
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -153,26 +124,20 @@
 </head>
 <body class="antialiased">
 
-
-    <!-- Custom Cursor Elements -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-
-    <!-- Preloader -->
     <div id="preloader">
         <div class="text-center">
             <h1 class="text-6xl md:text-8xl font-serif text-zim-gold loader-text overflow-hidden">
-                <span class="inline-block reveal-text">REGIONAL DEEP DIVE</span>
+                <span class="inline-block reveal-text">BULAWAYO METRO</span>
             </h1>
             <p class="text-white/50 mt-4 tracking-[0.5em] text-sm uppercase reveal-text-sm overflow-hidden">
-                <span class="inline-block">Zimbabwe's Ten Provinces</span>
+                <span class="inline-block">City of Kings Journal</span>
             </p>
         </div>
     </div>
 
-
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-500" id="navbar">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center h-24">
@@ -208,87 +173,147 @@
         </div>
     </nav>
 
-
-    <!-- Hero Section -->
-    <header id="hero" class="relative w-full h-[70vh] overflow-hidden flex items-center justify-center">
-        <!-- Dynamic Background -->
+    <header id="hero" class="relative w-full h-[80vh] overflow-hidden flex items-center justify-center">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-safari-dark z-10"></div>
             <div class="absolute inset-0 bg-black/40 z-0"></div>
-            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2600&auto=format&fit=crop" 
-                 class="w-full h-full object-cover parallax-img scale-110" alt="Zimbabwe Landscapes">
+            <img src="assets/bulawayo-skyline-ai.jpg" 
+                 class="w-full h-full object-cover parallax-img scale-110" alt="Bulawayo Cityscape">
         </div>
-
 
         <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
             <div class="overflow-hidden mb-2">
                 <p class="text-zim-gold text-sm md:text-base tracking-[0.3em] uppercase font-semibold hero-anim translate-y-full">
-                    From Highlands to Falls
+                    Granite kopjes, rail lines, gallery lights
                 </p>
             </div>
             <div class="overflow-hidden my-4">
                 <h1 class="text-5xl md:text-7xl font-serif font-medium text-white leading-none hero-anim translate-y-full">
-                    Explore Every Province
+                    Bulawayo Metro Reads
                 </h1>
             </div>
             <div class="overflow-hidden mb-8">
                 <p class="text-gray-300 max-w-2xl mx-auto hero-anim opacity-0">
-                    A curated overview of Zimbabwe's ten provinces, blending wildlife, culture, history, and adventure into one continuous journey.
+                    Slow essays and neighbourhood guides that trace Bulawayo's rail heritage, creative scene, and its gateway role to Matobo.
                 </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mt-4 hero-anim opacity-0">
+                <span class="px-4 py-1 text-xs uppercase tracking-[0.2em] border border-white/10 rounded-full text-gray-300">City Guides</span>
+                <span class="px-4 py-1 text-xs uppercase tracking-[0.2em] border border-white/10 rounded-full text-gray-300">Culture</span>
+                <span class="px-4 py-1 text-xs uppercase tracking-[0.2em] border border-white/10 rounded-full text-gray-300">Heritage</span>
             </div>
         </div>
     </header>
 
-
-    <!-- Marquee Ticker -->
     <div class="bg-zim-gold text-safari-dark py-3 border-y border-black relative z-30">
         <div class="marquee-container">
             <div class="marquee-content font-bold text-sm uppercase tracking-widest">
-                <span class="mx-8">● Matabeleland North – Victoria Falls & Hwange</span>
-                <span class="mx-8">● Manicaland – Eastern Highlands & Tea Estates</span>
-                <span class="mx-8">● Masvingo – Great Zimbabwe Ruins</span>
-                <span class="mx-8">● Mashonaland West – Kariba & Mana Pools</span>
-                <span class="mx-8">● Midlands – Antelope Park & Central Hub</span>
-                <!-- Duplicate for seamless loop -->
-                <span class="mx-8">● Matabeleland North – Victoria Falls & Hwange</span>
-                <span class="mx-8">● Manicaland – Eastern Highlands & Tea Estates</span>
-                <span class="mx-8">● Masvingo – Great Zimbabwe Ruins</span>
-                <span class="mx-8">● Mashonaland West – Kariba & Mana Pools</span>
-                <span class="mx-8">● Midlands – Antelope Park & Central Hub</span>
+                <span class="mx-8">● Matobo National Park granite kopjes</span>
+                <span class="mx-8">● National Railways Museum steam engines</span>
+                <span class="mx-8">● Khami Ruins sunset light</span>
+                <span class="mx-8">● Galleries along Main Street</span>
+                <span class="mx-8">● Township braai smoke at dusk</span>
             </div>
         </div>
     </div>
 
-
-    <!-- Horizontal Scroll Section: Provinces -->
-    <section id="provinces" class="relative h-screen overflow-hidden bg-[#0F1418]">
-        <div class="absolute top-12 left-12 z-20">
-            <h2 class="text-4xl md:text-6xl font-serif text-white">Regional <span class="text-zim-gold">Deep Dive</span></h2>
-            <p class="text-sm text-gray-400 mt-2 uppercase tracking-widest">Scroll Down to Explore Regions</p>
-        </div>
-
-
-        <!-- The Horizontal Track -->
-        <div class="horizontal-scroll-container" id="scroll-track">
-            
-            <!-- Intro Slide -->
-            <div class="w-screen h-full flex-shrink-0 flex items-center justify-center border-r border-white/5 relative">
-                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-                <div class="text-center max-w-2xl px-6">
-                    <i data-lucide="map" class="w-16 h-16 text-zim-gold mx-auto mb-6"></i>
-                    <h3 class="text-5xl font-serif mb-6">10 Unique Provinces</h3>
-                    <p class="text-xl text-gray-400">From the mist-covered mountains of Manicaland to the thundering smoke of Matabeleland North. Swipe to begin the journey.</p>
+    <section id="articles" class="py-24 md:py-32 bg-safari-dark relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-10 mb-16">
+                <div class="max-w-xl">
+                    <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-4">Bulawayo Metro</p>
+                    <h2 class="text-4xl md:text-6xl font-serif mb-6">City <span class="italic text-zim-gold">Briefings</span></h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        From the broad avenues of the CBD to the rock art of Matobo, these stories are designed for travellers who want
+                        to feel Bulawayo's tempo before they arrive.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3 lg:justify-end">
+                    <button class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-zim-gold text-zim-gold hover:bg-zim-gold hover:text-black transition-colors hover-trigger">All</button>
+                    <button class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-white/10 text-gray-300 hover:border-zim-gold hover:text-zim-gold transition-colors hover-trigger">City Guides</button>
+                    <button class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-white/10 text-gray-300 hover:border-zim-gold hover:text-zim-gold transition-colors hover-trigger">Culture</button>
+                    <button class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-white/10 text-gray-300 hover:border-zim-gold hover:text-zim-gold transition-colors hover-trigger">Heritage</button>
                 </div>
             </div>
 
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <article class="glass-panel rounded-2xl p-8 flex flex-col lg:flex-row gap-8 article-card hover:bg-white/5 cursor-pointer transition-colors" data-article="bulawayo-48-hours-cbd.html">
+                    <div class="flex-1">
+                        <p class="text-xs uppercase tracking-[0.25em] text-zim-gold mb-3">City Guide</p>
+                        <h3 class="text-3xl font-serif mb-4">48 Hours in the Bulawayo CBD</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            A two-day walk through wide avenues, arcades, and cafes &mdash; from Lokhutula Lodge corridors to late-afternoon light
+                            on Main Street facades.
+                        </p>
+                        <div class="flex items-center text-xs text-gray-500 space-x-4">
+                            <span class="inline-flex items-center">
+                                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                                7 min read
+                            </span>
+                            <span class="inline-flex items-center">
+                                <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                                CBD · Main Street
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-64 h-40 lg:h-56 rounded-xl overflow-hidden bg-cover bg-center" style="background-image: url('assets/bulawayo-skyline-ai.jpg');"></div>
+                </article>
 
-            <!-- Province Slides (Populated via JS) -->
-            <!-- Example Structure required for JS logic -->
+                <div class="space-y-6 lg:col-span-1">
+                    <article class="glass-panel rounded-2xl p-6 h-full flex flex-col justify-between article-card hover:bg-white/5 cursor-pointer transition-colors" data-article="bulawayo-after-dark.html">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.25em] text-zim-gold mb-2">Culture</p>
+                            <h3 class="text-xl font-serif mb-3">Bulawayo After Dark</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Jazz corners, township braai smoke, and quiet courtyards where the city exhales after sunset.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between mt-6 text-xs text-gray-500">
+                            <span class="inline-flex items-center">
+                                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                                5 min read
+                            </span>
+                            <span>CBD · Makokoba</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="space-y-6">
+                    <article class="glass-panel rounded-2xl p-6 article-card hover:bg-white/5 cursor-pointer transition-colors" data-article="bulawayo-matobo-day-trip.html">
+                        <p class="text-xs uppercase tracking-[0.25em] text-zim-gold mb-2">Slow Spaces</p>
+                        <h3 class="text-xl font-serif mb-3">Matobo Day Trip</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            How to leave Bulawayo after breakfast and be standing among granite kopjes, rock art, and eagles by mid-morning.
+                        </p>
+                        <div class="flex items-center text-xs text-gray-500 space-x-4">
+                            <span class="inline-flex items-center">
+                                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                                6 min read
+                            </span>
+                            <span>Matobo National Park</span>
+                        </div>
+                    </article>
+
+                    <article class="glass-panel rounded-2xl p-6 article-card hover:bg-white/5 cursor-pointer transition-colors" data-article="bulawayo-industrial-heritage.html">
+                        <p class="text-xs uppercase tracking-[0.25em] text-zim-gold mb-2">Heritage</p>
+                        <h3 class="text-xl font-serif mb-3">Industrial Heritage of Bulawayo</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            Steam engines, red-brick depots, and the rail yards that shaped Zimbabwe's second city.
+                        </p>
+                        <div class="flex items-center text-xs text-gray-500 space-x-4">
+                            <span class="inline-flex items-center">
+                                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                                8 min read
+                            </span>
+                            <span>Railway Museum · CBD</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </div>
     </section>
 
-
-    <!-- Footer -->
     <footer class="bg-black py-20 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
             <div class="mb-12 md:mb-0">
@@ -327,70 +352,15 @@
         </div>
     </footer>
 
-
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <script>
-        // --- 1. Data & Content Generation ---
-        const provincesData = [
-            { name: "Harare Metro", img: "assets/harare-cityscape.png", desc: "The Sunshine City. Business meets botanical gardens.", highlight: "Conference Hub" },
-            { name: "Bulawayo Metro", img: "assets/bulawayo-skyline-ai.jpg", desc: "City of Kings. Colonial architecture and nearby Matopos.", highlight: "Cultural Heritage" },
-            { name: "Matabeleland North", img: "assets/matebeleland-north.jpg", desc: "Home to the majestic Victoria Falls and Hwange National Park.", highlight: "Wildlife Capital" },
-            { name: "Masvingo", img: "assets/masvingo.png", desc: "Ancient history lives at Great Zimbabwe Ruins and Lake Mutirikwi.", highlight: "Ancient City" },
-            { name: "Manicaland", img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600", desc: "The Eastern Highlands. Mountains, waterfalls, and lush tea estates.", highlight: "Scenic Beauty" },
-            { name: "Mashonaland West", img: "https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=1600", desc: "Kariba Dam shoreline, fishing, and the Mana Pools wilderness.", highlight: "Water & Safari" },
-            { name: "Midlands", img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600", desc: "The heart of the nation. Antelope Park and gold mining history.", highlight: "Central Hub" },
-            { name: "Matabeleland South", img: "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?q=80&w=1600", desc: "Granite kopjes of Matobo and black rhino sanctuaries.", highlight: "Rhino Conservation" },
-            { name: "Mashonaland East", img: "assets/mashonaland-east-image.jpg", desc: "Balancing rocks and rich agricultural landscapes.", highlight: "Agro-Tourism" },
-            { name: "Mashonaland Central", img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1600", desc: "Mazowe Dam and vast citrus estates.", highlight: "Farming & Leisure" },
-        ];
-
-        const track = document.getElementById('scroll-track');
-        
-        // Dynamically create Horizontal Slides
-        provincesData.forEach((prov, index) => {
-            const slide = document.createElement('div');
-            slide.className = `w-screen h-full flex-shrink-0 relative flex items-center justify-center p-6 md:p-20 border-r border-white/5 group`;
-            slide.innerHTML = `
-                <div class="absolute inset-0 overflow-hidden">
-                    <div class="absolute inset-0 bg-black/60 z-10 group-hover:bg-black/40 transition-colors duration-700"></div>
-                    <img src="${prov.img}" class="w-full h-full object-cover transition-transform duration-1000 scale-100 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="${prov.name}">
-                </div>
-                <div class="relative z-20 max-w-3xl glass-panel p-8 md:p-12 rounded-xl translate-y-12 opacity-0 slide-content border-l-4 border-zim-gold">
-                    <span class="text-zim-gold font-bold tracking-widest uppercase text-sm mb-2 block">${prov.highlight}</span>
-                    <h3 class="text-4xl md:text-6xl font-serif text-white mb-6">${prov.name}</h3>
-                    <p class="text-lg text-gray-200 leading-relaxed">${prov.desc}</p>
-                    <button class="mt-8 flex items-center text-white border border-white/30 px-6 py-3 rounded-full hover:bg-zim-gold hover:border-zim-gold hover:text-black transition-all hover-trigger explore-region-btn" data-region="${prov.name}">
-                        Explore Region <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
-                    </button>
-                    <span class="absolute -top-12 right-0 text-9xl font-serif text-white/5 font-bold pointer-events-none">${index + 1}</span>
-                </div>
-            `;
-            track.appendChild(slide);
-        });
-
-        document.querySelectorAll('.explore-region-btn').forEach((btn) => {
-            if (btn.dataset.region === 'Harare Metro') {
-                btn.addEventListener('click', () => {
-                    window.location.href = 'harare-metro.html';
-                });
-            }
-            if (btn.dataset.region === 'Bulawayo Metro') {
-                btn.addEventListener('click', () => {
-                    window.location.href = 'bulawayo-metro.html';
-                });
-            }
-        });
-
-        // Re-init Icons for dynamically added content
         lucide.createIcons();
 
-        // --- 2. Custom Cursor Logic ---
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-outline');
-        
+
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
             const posY = e.clientY;
@@ -401,12 +371,11 @@
 
                 cursorOutline.animate({
                     left: `${posX}px`,
-                    top: `${posY}px` 
-                }, { duration: 500, fill: "forwards" });
+                    top: `${posY}px`
+                }, { duration: 500, fill: 'forwards' });
             }
         });
 
-        // Hover interaction for cursor
         document.querySelectorAll('.hover-trigger').forEach(el => {
             if (!cursorOutline) return;
             el.addEventListener('mouseenter', () => {
@@ -426,66 +395,49 @@
             });
         }
 
-        // --- 3. GSAP Animations ---
         gsap.registerPlugin(ScrollTrigger);
 
-        // Preloader Sequence
         const tlLoader = gsap.timeline();
-        
-        tlLoader.to(".reveal-text", { y: "0%", duration: 1, ease: "power4.out" })
-                .to(".reveal-text-sm", { opacity: 1, duration: 1, delay: -0.5 })
-                .to("#preloader", { y: "-100%", duration: 1.2, ease: "expo.inOut", delay: 0.5 })
-                .to(".hero-anim", { 
-                    y: "0%", 
-                    opacity: 1, 
-                    duration: 1.2, 
-                    stagger: 0.15, 
-                    ease: "power3.out" 
-                }, "-=0.8");
 
-        // Hero Parallax
-        gsap.to(".parallax-img", {
+        tlLoader.to('.reveal-text', { y: '0%', duration: 1, ease: 'power4.out' })
+                .to('.reveal-text-sm', { opacity: 1, duration: 1, delay: -0.5 })
+                .to('#preloader', { y: '-100%', duration: 1.2, ease: 'expo.inOut', delay: 0.5 })
+                .to('.hero-anim', {
+                    y: '0%',
+                    opacity: 1,
+                    duration: 1.2,
+                    stagger: 0.15,
+                    ease: 'power3.out'
+                }, '-=0.8');
+
+        gsap.to('.parallax-img', {
             yPercent: 20,
-            ease: "none",
+            ease: 'none',
             scrollTrigger: {
-                trigger: "#hero",
-                start: "top top",
-                end: "bottom top",
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom top',
                 scrub: true
             }
         });
 
-        // Horizontal Scroll for Provinces
-        let sections = gsap.utils.toArray(".w-screen");
-
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
-            ease: "none",
+        gsap.from('.article-card', {
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.15,
             scrollTrigger: {
-                trigger: "#provinces",
-                pin: true,
-                scrub: 1,
-                snap: 1 / (sections.length - 1),
-                end: () => "+=" + document.querySelector("#provinces").offsetWidth * 2,
+                trigger: '#articles',
+                start: 'top 80%'
             }
         });
 
-        // Animation for content inside horizontal slides
-        sections.forEach((section) => {
-            let content = section.querySelector(".slide-content");
-            if(content) {
-                gsap.to(content, {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.5,
-                    scrollTrigger: {
-                        trigger: section,
-                        containerAnimation: gsap.getTweensOf(sections)[0],
-                        start: "left center",
-                        toggleActions: "play none none reverse"
-                    }
-                });
-            }
+        document.querySelectorAll('.article-card').forEach((card) => {
+            const target = card.dataset.article;
+            if (!target) return;
+            card.addEventListener('click', () => {
+                window.location.href = target;
+            });
         });
     </script>
 </body>
