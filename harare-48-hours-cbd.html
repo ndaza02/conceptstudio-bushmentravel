@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>48 Hours in the Harare CBD | ZimTour</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'safari-dark': '#0B0F12',
+                        'safari-green': '#1A2E25',
+                        'zim-gold': '#D4AF37',
+                        'zim-gold-light': '#F4C430',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F12;
+            color: #f8fafc;
+            overflow-x: hidden;
+            cursor: none;
+        }
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #D4AF37;
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        body:hover .cursor-outline.hovered {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #D4AF37;
+            backdrop-filter: blur(2px);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-nav {
+            background: rgba(11, 15, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #0B0F12;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loader-text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div id="preloader">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-7xl font-serif text-zim-gold loader-text overflow-hidden">
+                <span class="inline-block reveal-text">48 HOURS</span>
+            </h1>
+            <p class="text-white/50 mt-4 tracking-[0.5em] text-xs md:text-sm uppercase reveal-text-sm overflow-hidden">
+                <span class="inline-block">Harare CBD & Avenues</span>
+            </p>
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="flex items-center group hover-trigger">
+                    <i data-lucide="compass" class="w-8 h-8 text-zim-gold mr-3 transform group-hover:rotate-45 transition-transform duration-500"></i>
+                    <span class="text-2xl font-serif font-bold tracking-wider text-white">ZIM<span class="text-zim-gold">TOUR</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-12">
+                    <a href="index.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                    <a href="global.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Global</a>
+                    <a href="provinces.html" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Provinces</a>
+                </div>
+                <button class="bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
+                    Plan Trip
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="relative w-full h-[70vh] overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-safari-dark z-10"></div>
+            <div class="absolute inset-0 bg-black/40 z-0"></div>
+            <img src="assets/harare-cityscape.png" class="w-full h-full object-cover parallax-img scale-110" alt="Harare CBD skyline">
+        </div>
+        <div class="relative z-20 px-4 max-w-3xl mx-auto text-center">
+            <p class="text-zim-gold text-xs md:text-sm tracking-[0.4em] uppercase mb-4 hero-anim translate-y-full">City Guide · Itinerary</p>
+            <h1 class="text-4xl md:text-6xl font-serif leading-tight mb-4 hero-anim translate-y-full">48 Hours in the Harare CBD</h1>
+            <p class="text-gray-300 text-sm md:text-base hero-anim opacity-0">
+                A two-day walk through Harare's commercial heart and leafy avenues, crafted for travellers who want to feel the pulse
+                of the city without rushing it.
+            </p>
+        </div>
+    </header>
+
+    <main class="bg-safari-dark py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-6 space-y-16">
+            <section class="space-y-6">
+                <div class="flex items-center justify-between text-xs text-gray-500 uppercase tracking-[0.25em]">
+                    <span class="inline-flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2"></i>7 min read</span>
+                    <span class="inline-flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>CBD · Avenues</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    Harare's central business district is often experienced through car windows and quick meetings. This 48-hour
+                    itinerary slows everything down. It invites you to walk, sit, listen, and look up – to notice the sculpted
+                    concrete facades, jacaranda canopies, and fleeting conversations at street corners.
+                </p>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-serif">Day One · Street Level</h2>
+                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
+                    <h3 class="text-lg md:text-xl font-serif text-zim-gold">Morning · Julius Nyerere & First Street</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Start with an early walk along Julius Nyerere Way, before traffic peaks. Street vendors are laying out curios,
+                        office workers stream past in muted suits, and the light is still soft on mirrored facades.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Pause at a corner café for espresso and a locally baked pastry. Sit by a window and watch how the city
+                        choreographs itself – kombis weaving through lanes, school uniforms darting between crossings, the
+                        soundtrack of car horns and distant laughter.
+                    </p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
+                    <h3 class="text-lg md:text-xl font-serif text-zim-gold">Afternoon · Galleries & Government</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Drift towards the National Gallery of Zimbabwe, cutting through tree-lined avenues and quiet government
+                        buildings. Inside, give yourself at least an hour to move slowly through the permanent collection and any
+                        rotating exhibitions.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Step back outside and let the contrast sink in: brutalist facades across the street, jacaranda blossoms under
+                        your feet, and the soft hum of lunchtime traffic.
+                    </p>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-serif">Day Two · Rooftops & Avenues</h2>
+                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
+                    <h3 class="text-lg md:text-xl font-serif text-zim-gold">Morning · The Avenues District</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        The Avenues offer a softer, more residential rhythm. Walk past embassy houses, small clinics, and quiet
+                        apartment blocks framed by mature trees. Look for independent coffee shops and bakeries tucked into ground
+                        floors and courtyards.
+                    </p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
+                    <h3 class="text-lg md:text-xl font-serif text-zim-gold">Blue Hour · Rooftop Harare</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        As the sun begins to drop, find a rooftop bar within the CBD. Order something citrus-forward and step as close
+                        to the parapet as you're allowed. The grid of headlights below, the distant silhouettes of Kopje and
+                        high-rise hotels – this is where the "Sunshine City" nickname lives.
+                    </p>
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <div class="glass-panel rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-2">Extend Your Stay</p>
+                        <h3 class="text-xl font-serif mb-1">Pair this with Green Harare</h3>
+                        <p class="text-gray-400 text-sm">Balance the CBD intensity with a day exploring Harare's gardens and woodlands.</p>
+                    </div>
+                    <a href="harare-green-harare.html" class="text-xs uppercase tracking-[0.25em] text-zim-gold hover:text-white inline-flex items-center hover-trigger">
+                        Read Green Harare<i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-black py-16 border-t border-white/10 mt-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
+            <div class="mb-10 md:mb-0">
+                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">ZIM<span class="text-zim-gold">TOUR</span></span>
+                <a href="harare-metro.html" class="text-xs uppercase tracking-[0.25em] text-gray-400 hover:text-zim-gold hover-trigger inline-flex items-center">
+                    ← Back to Harare Metro
+                </a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-10 text-xs uppercase tracking-widest text-gray-500">
+                <div>
+                    <h4 class="text-zim-gold mb-3 font-bold">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hotels</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safaris</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-zim-gold mb-3 font-bold">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-zim-gold mb-3 font-bold">Newsletter</h4>
+                    <div class="flex border-b border-gray-700 pb-2">
+                        <input type="email" placeholder="Email Address" class="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600">
+                        <button class="text-zim-gold hover:text-white uppercase font-bold text-xs">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: 'forwards' });
+        });
+
+        document.querySelectorAll('.hover-trigger').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('hovered');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.classList.remove('hovered');
+            });
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const tlLoader = gsap.timeline();
+
+        tlLoader.to('.reveal-text', { y: '0%', duration: 1, ease: 'power4.out' })
+                .to('.reveal-text-sm', { opacity: 1, duration: 1, delay: -0.5 })
+                .to('#preloader', { y: '-100%', duration: 1.2, ease: 'expo.inOut', delay: 0.5 })
+                .to('.hero-anim', {
+                    y: '0%',
+                    opacity: 1,
+                    duration: 1.2,
+                    stagger: 0.15,
+                    ease: 'power3.out'
+                }, '-=0.8');
+
+        gsap.to('.parallax-img', {
+            yPercent: 20,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        gsap.from('section', {
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: 'main',
+                start: 'top 80%'
+            }
+        });
+    </script>
+</body>
+</html>

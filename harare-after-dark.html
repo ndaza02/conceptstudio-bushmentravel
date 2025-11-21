@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harare After Dark | ZimTour</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'safari-dark': '#0B0F12',
+                        'safari-green': '#1A2E25',
+                        'zim-gold': '#D4AF37',
+                        'zim-gold-light': '#F4C430',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F12;
+            color: #f8fafc;
+            overflow-x: hidden;
+            cursor: none;
+        }
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #D4AF37;
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        body:hover .cursor-outline.hovered {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #D4AF37;
+            backdrop-filter: blur(2px);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-nav {
+            background: rgba(11, 15, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #0B0F12;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loader-text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div id="preloader">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-7xl font-serif text-zim-gold loader-text overflow-hidden">
+                <span class="inline-block reveal-text">AFTER DARK</span>
+            </h1>
+            <p class="text-white/50 mt-4 tracking-[0.5em] text-xs md:text-sm uppercase reveal-text-sm overflow-hidden">
+                <span class="inline-block">Night Notes from Harare</span>
+            </p>
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="flex items-center group hover-trigger">
+                    <i data-lucide="compass" class="w-8 h-8 text-zim-gold mr-3 transform group-hover:rotate-45 transition-transform duration-500"></i>
+                    <span class="text-2xl font-serif font-bold tracking-wider text-white">ZIM<span class="text-zim-gold">TOUR</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-12">
+                    <a href="index.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                    <a href="global.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Global</a>
+                    <a href="provinces.html" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Provinces</a>
+                </div>
+                <button class="bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
+                    Plan Trip
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="relative w-full h-[70vh] overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-safari-dark z-10"></div>
+            <div class="absolute inset-0 bg-black/70 z-0"></div>
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover parallax-img scale-110" alt="City lights at night">
+        </div>
+        <div class="relative z-20 px-4 max-w-3xl mx-auto text-center">
+            <p class="text-zim-gold text-xs md:text-sm tracking-[0.4em] uppercase mb-4 hero-anim translate-y-full">Culture · Nightlife</p>
+            <h1 class="text-4xl md:text-6xl font-serif leading-tight mb-4 hero-anim translate-y-full">Harare After Dark</h1>
+            <p class="text-gray-300 text-sm md:text-base hero-anim opacity-0">
+                From jazz basements to roadside braai smoke, this is a night walk through the music, light, and food that shape
+                Harare's evening personality.
+            </p>
+        </div>
+    </header>
+
+    <main class="bg-safari-dark py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-6 space-y-16">
+            <section class="space-y-6">
+                <div class="flex items-center justify-between text-xs text-gray-500 uppercase tracking-[0.25em]">
+                    <span class="inline-flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2"></i>5 min read</span>
+                    <span class="inline-flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>Avondale · Borrowdale</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    Harare's daytime rhythm is all business meetings, market chatter, and traffic. At night, the city folds into
+                    a softer, more cinematic palette: sodium lamps, neon bar signs, the glow of open coals at roadside braai stalls.
+                    "After Dark" is not about a checklist of clubs – it's a sequence of moods.
+                </p>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-serif">Jazz Basements & Listening Rooms</h2>
+                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Start with a venue where conversation is encouraged over shouting. Harare's small jazz basements, often
+                        hidden below street level or behind unmarked doors, become sanctuaries of brass, upright bass and soft
+                        percussion.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Order something simple – a whisky, a ginger beer with bitters – and let the band dictate the pace of your
+                        evening. Notice the regulars greeting each other, the way the sound engineer leans into each solo, the
+                        posters taped to concrete pillars advertising next month's set.
+                    </p>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-serif">Rooftop Lounges & City Views</h2>
+                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        As the night deepens, move upwards. Rooftop lounges across Avondale and Borrowdale offer a raised, slower
+                        perspective on Harare. From here, traffic dissolves into distant white noise and the skyline becomes
+                        a horizon of silhouettes.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Look for spaces that play with soft lighting – candles, filament bulbs, amber strips under the bar counter.
+                        The music is more curated here: vinyl nights, deep house, or old-school R&B.
+                    </p>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-serif">Roadside Braai & Street Noise</h2>
+                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        No Harare night is complete without the smell of grilled meat. Roadside braai joints – from polished spots
+                        with branded signage to informal stands lit by a single bulb – are where evenings spill past midnight.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Order a plate of ribs, sausages or chicken, plus sadza and salad. Eat at a plastic table, listen to the mix
+                        of languages around you, and watch how strangers negotiate space around the coals.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-black py-16 border-t border-white/10 mt-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
+            <div class="mb-10 md:mb-0">
+                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">ZIM<span class="text-zim-gold">TOUR</span></span>
+                <a href="harare-metro.html" class="text-xs uppercase tracking-[0.25em] text-gray-400 hover:text-zim-gold hover-trigger inline-flex items-center">
+                    ← Back to Harare Metro
+                </a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-10 text-xs uppercase tracking-widest text-gray-500">
+                <div>
+                    <h4 class="text-zim-gold mb-3 font-bold">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hotels</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safaris</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-zim-gold mb-3 font-bold">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-zim-gold mb-3 font-bold">Newsletter</h4>
+                    <div class="flex border-b border-gray-700 pb-2">
+                        <input type="email" placeholder="Email Address" class="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600">
+                        <button class="text-zim-gold hover:text-white uppercase font-bold text-xs">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: 'forwards' });
+        });
+
+        document.querySelectorAll('.hover-trigger').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('hovered');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.classList.remove('hovered');
+            });
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const tlLoader = gsap.timeline();
+
+        tlLoader.to('.reveal-text', { y: '0%', duration: 1, ease: 'power4.out' })
+                .to('.reveal-text-sm', { opacity: 1, duration: 1, delay: -0.5 })
+                .to('#preloader', { y: '-100%', duration: 1.2, ease: 'expo.inOut', delay: 0.5 })
+                .to('.hero-anim', {
+                    y: '0%',
+                    opacity: 1,
+                    duration: 1.2,
+                    stagger: 0.15,
+                    ease: 'power3.out'
+                }, '-=0.8');
+
+        gsap.to('.parallax-img', {
+            yPercent: 20,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        gsap.from('section', {
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: 'main',
+                start: 'top 80%'
+            }
+        });
+    </script>
+</body>
+</html>
