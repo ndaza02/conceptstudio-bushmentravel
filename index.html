@@ -252,7 +252,7 @@
         </div>
         
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center opacity-50 animate-bounce">
+        <div class="absolute bottom-10 inset-x-0 z-20 flex flex-col items-center opacity-50 animate-bounce">
             <span class="text-[10px] uppercase tracking-widest mb-2">Scroll</span>
             <i data-lucide="chevron-down" class="w-4 h-4"></i>
         </div>
@@ -307,7 +307,7 @@
                         <div class="text-zim-gold text-xs font-bold uppercase tracking-widest mb-2">Eco-Tourism</div>
                         <h3 class="text-3xl font-serif leading-tight mb-4">Sustainable Skies</h3>
                         <p class="text-gray-400 text-sm mb-6 line-clamp-3">Airlines investing in carbon capture tech are seeing a 40% rise in millennial bookings.</p>
-                        <span class="inline-block border-b border-zim-gold pb-1 text-xs uppercase tracking-widest group-hover:text-zim-gold transition-colors">Read Report</span>
+                        <a href="global-sustainable-skies.html" class="inline-block border-b border-zim-gold pb-1 text-xs uppercase tracking-widest group-hover:text-zim-gold transition-colors">Read Report</a>
                     </div>
                 </div>
 
@@ -322,7 +322,7 @@
                         <div class="text-zim-gold text-xs font-bold uppercase tracking-widest mb-2">Tech & Travel</div>
                         <h3 class="text-3xl font-serif leading-tight mb-4">The VR Pre-Trip</h3>
                         <p class="text-gray-400 text-sm mb-6 line-clamp-3">Virtual Reality previews of hotel suites are increasing conversion rates by 200% in luxury markets.</p>
-                        <span class="inline-block border-b border-zim-gold pb-1 text-xs uppercase tracking-widest group-hover:text-zim-gold transition-colors">Read Report</span>
+                        <a href="global-vr-pre-trip.html" class="inline-block border-b border-zim-gold pb-1 text-xs uppercase tracking-widest group-hover:text-zim-gold transition-colors">Read Report</a>
                     </div>
                 </div>
 
@@ -337,7 +337,7 @@
                         <div class="text-zim-gold text-xs font-bold uppercase tracking-widest mb-2">Policy</div>
                         <h3 class="text-3xl font-serif leading-tight mb-4">Digital Nomad Visas</h3>
                         <p class="text-gray-400 text-sm mb-6 line-clamp-3">Zimbabwe considers joining 45 other nations in offering long-stay visas for remote workers.</p>
-                        <span class="inline-block border-b border-zim-gold pb-1 text-xs uppercase tracking-widest group-hover:text-zim-gold transition-colors">Read Report</span>
+                        <a href="global-digital-nomad-visas.html" class="inline-block border-b border-zim-gold pb-1 text-xs uppercase tracking-widest group-hover:text-zim-gold transition-colors">Read Report</a>
                     </div>
                 </div>
             </div>
@@ -422,14 +422,14 @@
         
         const provincesData = [
             { name: "Harare Metro", img: "assets/harare-cityscape.png", desc: "The Sunshine City. Business meets botanical gardens.", highlight: "Conference Hub" },
-            { name: "Bulawayo Metro", img: "https://images.unsplash.com/photo-1634553057723-a236d3e2166d?q=80&w=1600", desc: "City of Kings. Colonial architecture and nearby Matopos.", highlight: "Cultural Heritage" },
-            { name: "Matabeleland North", img: "https://images.unsplash.com/photo-1604515287764-754363225cb4?q=80&w=1600", desc: "Home to the majestic Victoria Falls and Hwange National Park.", highlight: "Wildlife Capital" },
-            { name: "Masvingo", img: "https://images.unsplash.com/photo-1651316828031-471e47f35863?q=80&w=1600", desc: "Ancient history lives at Great Zimbabwe Ruins and Lake Mutirikwi.", highlight: "Ancient City" },
+            { name: "Bulawayo Metro", img: "assets/bulawayo-skyline-ai.jpg", desc: "City of Kings. Colonial architecture and nearby Matopos.", highlight: "Cultural Heritage" },
+            { name: "Matabeleland North", img: "assets/matebeleland-north.jpg", desc: "Home to the majestic Victoria Falls and Hwange National Park.", highlight: "Wildlife Capital" },
+            { name: "Masvingo", img: "assets/masvingo.png", desc: "Ancient history lives at Great Zimbabwe Ruins and Lake Mutirikwi.", highlight: "Ancient City" },
             { name: "Manicaland", img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600", desc: "The Eastern Highlands. Mountains, waterfalls, and lush tea estates.", highlight: "Scenic Beauty" },
             { name: "Mashonaland West", img: "https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=1600", desc: "Kariba Dam shoreline, fishing, and the Mana Pools wilderness.", highlight: "Water & Safari" },
             { name: "Midlands", img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600", desc: "The heart of the nation. Antelope Park and gold mining history.", highlight: "Central Hub" },
             { name: "Matabeleland South", img: "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?q=80&w=1600", desc: "Granite kopjes of Matobo and black rhino sanctuaries.", highlight: "Rhino Conservation" },
-            { name: "Mashonaland East", img: "https://images.unsplash.com/photo-1518182170546-0766aa6f694e?q=80&w=1600", desc: "Balancing rocks and rich agricultural landscapes.", highlight: "Agro-Tourism" },
+            { name: "Mashonaland East", img: "assets/mashonaland-east-image.jpg", desc: "Balancing rocks and rich agricultural landscapes.", highlight: "Agro-Tourism" },
             { name: "Mashonaland Central", img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1600", desc: "Mazowe Dam and vast citrus estates.", highlight: "Farming & Leisure" },
         ];
 
