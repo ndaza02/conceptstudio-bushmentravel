@@ -959,8 +959,8 @@
 
         // --- 1. Data & Content Generation ---
         const provincesData = [
-            { name: "Harare Metro", img: "assets/harare-cityscape.png", desc: "Our Harare journals - 48 Hours in the CBD, After Dark, Green Harare and Modernist Facades - start from this urban hub.", highlight: "Harare Journals" },
-            { name: "Bulawayo Metro", img: "assets/bulawayo-skyline-ai.jpg", desc: "Bulawayo 48 Hours, After Dark and Industrial Heritage, plus Khami Ruins and Matobo day trips, all depart from here.", highlight: "Bulawayo Base" },
+            { name: "Harare", img: "assets/harare-cityscape.png", desc: "Our Harare journals - 48 Hours in the CBD, After Dark, Green Harare and Modernist Facades - start from this urban hub.", highlight: "Harare Journals" },
+            { name: "Bulawayo", img: "assets/bulawayo-skyline-ai.jpg", desc: "Bulawayo 48 Hours, After Dark and Industrial Heritage, plus Khami Ruins and Matobo day trips, all depart from here.", highlight: "Bulawayo Base" },
             { name: "Matabeleland North", img: "assets/matebeleland-north.jpg", desc: "Host to our Victoria Falls Experience day trips and Zambezi-side viewpoints.", highlight: "Victoria Falls" },
             { name: "Masvingo", img: "assets/masvingo.png", desc: "Base for our Great Zimbabwe safari journal through the country's ancient stone capital.", highlight: "Great Zimbabwe" },
             { name: "Manicaland", img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600", desc: "Future Bushmen escapes into the Eastern Highlands - Nyanga, Chimanimani and tea estates - coming soon.", highlight: "Coming Soon" },
@@ -998,12 +998,12 @@
         }
 
         document.querySelectorAll('.explore-region-btn').forEach((btn) => {
-            if (btn.dataset.region === 'Harare Metro') {
+            if (btn.dataset.region === 'Harare') {
                 btn.addEventListener('click', () => {
                     window.location.href = 'harare-metro.html';
                 });
             }
-            if (btn.dataset.region === 'Bulawayo Metro') {
+            if (btn.dataset.region === 'Bulawayo') {
                 btn.addEventListener('click', () => {
                     window.location.href = 'bulawayo-metro.html';
                 });
