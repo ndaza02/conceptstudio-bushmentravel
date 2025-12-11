@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Nomad Visas | ZimTour</title>
+    <title>Safari Journal | Bushmen Travel</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -20,8 +20,11 @@
                     colors: {
                         'safari-dark': '#0B0F12',
                         'safari-green': '#1A2E25',
-                        'zim-gold': '#D4AF37',
-                        'zim-gold-light': '#F4C430',
+                        'zim-gold': '#8ac544',
+                        'zim-gold-light': '#f0e78c',
+                        'bush-green': '#599f1a',
+                        'bush-green-light': '#b0ea61',
+                        'bush-sand': '#f2e793',
                     },
                     fontFamily: {
                         serif: ['"Cormorant Garamond"', 'serif'],
@@ -52,19 +55,19 @@
         .cursor-dot {
             width: 8px;
             height: 8px;
-            background-color: #D4AF37;
+            background-color: #8ac544;
         }
         .cursor-outline {
             width: 40px;
             height: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.5);
+            border: 1px solid rgba(138, 197, 68, 0.5);
             transition: width 0.2s, height 0.2s, background-color 0.2s;
         }
         body:hover .cursor-outline.hovered {
             width: 80px;
             height: 80px;
-            background-color: rgba(212, 175, 55, 0.1);
-            border-color: #D4AF37;
+            background-color: rgba(138, 197, 68, 0.1);
+            border-color: #8ac544;
             backdrop-filter: blur(2px);
         }
         @media (max-width: 768px) {
@@ -88,6 +91,8 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+
+        /* Light theme overrides */
         html[data-theme='light'] body {
             background-color: #f9fafb;
             color: #0f172a;
@@ -133,19 +138,6 @@
         html[data-theme='light'] .border-white\/10 {
             border-color: rgba(148, 163, 184, 0.4) !important;
         }
-
-        #preloader {
-            position: fixed;
-            inset: 0;
-            background: #0B0F12;
-            z-index: 10000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .loader-text {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -153,29 +145,20 @@
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <div id="preloader">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-6xl font-serif text-zim-gold loader-text overflow-hidden">
-                <span class="inline-block reveal-text">DIGITAL NOMAD VISAS</span>
-            </h1>
-            <p class="text-white/50 mt-4 tracking-[0.5em] text-xs md:text-sm uppercase reveal-text-sm overflow-hidden">
-                <span class="inline-block">Long Stays, New Neighbours</span>
-            </p>
-        </div>
-    </div>
-
     <nav class="fixed w-full z-50 glass-nav transition-all duration-500" id="navbar">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center h-24">
                 <a href="index.html" class="flex items-center group hover-trigger">
-                    <i data-lucide="compass" class="w-8 h-8 text-zim-gold mr-3 transform group-hover:rotate-45 transition-transform duration-500"></i>
-                    <span class="text-2xl font-serif font-bold tracking-wider text-white">ZIM<span class="text-zim-gold">TOUR</span></span>
+                    <img src="assets/bushmen-logo.png" alt="Bushmen Travel" class="h-10 w-auto mr-3">
+                    <span class="text-2xl font-serif font-bold tracking-wider text-white">Bushmen <span class="text-zim-gold">Travel</span></span>
                 </a>
                 <div class="flex items-center space-x-4">
                     <div class="hidden md:flex items-center space-x-12">
                         <a href="index.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
-                        <a href="global.html" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Global</a>
-                        <a href="provinces.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Provinces</a>
+                        <a href="index.html#tours" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                        <a href="provinces.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                        <a href="journal.html" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                        <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Contact</a>
                     </div>
 
                     <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger" aria-label="Toggle theme">
@@ -183,9 +166,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" class="lucide lucide-sun w-4 h-4" id="theme-icon-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
                     </button>
 
-                    <button class="bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
-                        Plan Trip
-                    </button>
+                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
+                        WhatsApp Us
+                    </a>
                     <button id="mobile-menu-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger">
                         <i data-lucide="menu" class="w-5 h-5"></i>
                     </button>
@@ -194,109 +177,129 @@
             <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 pb-4">
                 <div class="pt-4 space-y-3">
                     <a href="index.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Home</a>
-                    <a href="global.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Global</a>
-                    <a href="provinces.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Provinces</a>
+                    <a href="index.html#tours" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                    <a href="provinces.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                    <a href="journal.html" class="block text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <header id="hero" class="relative w-full h-[70vh] overflow-hidden flex items-center justify-center">
+    <header class="relative w-full h-[60vh] overflow-hidden flex items-center justify-center">
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-safari-dark z-10"></div>
-            <div class="absolute inset-0 bg-black/50 z-0"></div>
-            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover parallax-img scale-110" alt="City skyline at dusk with offices lit up">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-safari-dark z-10"></div>
+            <div class="absolute inset-0 bg-black/40 z-0"></div>
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2600&auto=format&fit=crop" class="w-full h-full object-cover parallax-img scale-110" alt="Zimbabwe landscape at sunset">
         </div>
-        <div class="relative z-20 px-4 max-w-3xl mx-auto text-center">
-            <p class="text-zim-gold text-xs md:text-sm tracking-[0.4em] uppercase mb-4 hero-anim translate-y-full">Policy · Remote Work</p>
-            <h1 class="text-4xl md:text-6xl font-serif leading-tight mb-4 hero-anim translate-y-full">Digital Nomad Visas</h1>
-            <p class="text-gray-300 text-sm md:text-base hero-anim opacity-0">
-                How long-stay visas for remote workers are reshaping city demographics, rental markets, and tourism economics.
+
+        <div class="relative z-20 text-center px-4 max-w-3xl mx-auto">
+            <p class="text-zim-gold text-xs md:text-sm tracking-[0.3em] uppercase font-semibold mb-3">Safari Journal</p>
+            <h1 class="text-4xl md:text-6xl font-serif font-medium text-white leading-tight mb-4">Stories from the Road</h1>
+            <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto">
+                Field notes from Bushmen Travel guides as we move through Matobo, Masvingo, Bulawayo and Victoria Falls – written in
+                the rhythm of real days on the road.
             </p>
         </div>
     </header>
 
     <main class="bg-safari-dark py-16 md:py-24">
-        <div class="max-w-4xl mx-auto px-6 space-y-16">
+        <div class="max-w-6xl mx-auto px-6 space-y-16">
+            <div class="flex justify-center">
+                <a href="https://www.tripadvisor.com/Attraction_Review-g298091-d15606738-Reviews-Bushmen_Travel-Bulawayo_Bulawayo_Province-m11424.html" target="_blank" rel="noopener noreferrer" class="inline-flex flex-col items-center px-4 py-3 rounded-sm bg-[#34E0A1] text-black text-[11px] tracking-[0.25em] uppercase font-semibold shadow-lg hover:brightness-110 transition">
+                    <span>Recommended On</span>
+                    <span class="mt-1 flex items-center gap-2 tracking-[0.25em]">
+                        <span class="text-[10px]">Tripadvisor</span>
+                    </span>
+                    <span class="mt-1 text-[9px] tracking-[0.3em]">Bushmen Travel</span>
+                </a>
+            </div>
             <section class="space-y-6">
-                <div class="flex items-center justify-between text-xs text-gray-500 uppercase tracking-[0.25em]">
-                    <span class="inline-flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2"></i>8 min read</span>
-                    <span class="inline-flex items-center"><i data-lucide="briefcase" class="w-4 h-4 mr-2"></i>Remote Work · Policy Design</span>
-                </div>
-                <p class="text-gray-300 leading-relaxed">
-                    Over forty countries now offer some form of digital nomad or remote work visa. The promise is simple: stay for
-                    six to twenty-four months, keep earning from abroad, and pour your spending into the local economy. Behind that
-                    simplicity lies a complex mix of tax rules, housing pressures, and lifestyle branding.
-                </p>
-            </section>
-
-            <section class="space-y-6">
-                <h2 class="text-2xl md:text-3xl font-serif">The Nomad Wave</h2>
-                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        The first generation of nomad visas targeted classic beach destinations: islands, coastal cities, and
-                        temperate capitals that could market themselves as "laptop under a palm tree" escapes. Over time, the
-                        profile has broadened. Mid-sized inland cities with strong internet, walkable cores, and good healthcare have
-                        entered the race.
-                    </p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        For host countries, the attraction is relatively low-risk revenue. Nomads bring foreign income but usually
-                        do not compete for local jobs. They rent apartments, eat out frequently, pay for co-working spaces, and
-                        often act as informal ambassadors on social media.
-                    </p>
-                </div>
-            </section>
-
-            <section class="space-y-6">
-                <h2 class="text-2xl md:text-3xl font-serif">What Successful Programs Share</h2>
-                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        The most effective digital nomad visas tend to share a handful of traits: clear eligibility rules, fully
-                        online application flows, reasonable minimum income thresholds, and rapid processing times. Uncertainty is
-                        the enemy &mdash; a freelancer balancing gigs cannot plan a move around a three-month approval window.
-                    </p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Another common thread is community support. Co-working hubs, mentorship programmes, and city-hosted welcome
-                        events help nomads plug into local networks rather than forming isolated bubbles. Cities that actively
-                        encourage knowledge exchange between visiting professionals and local entrepreneurs tend to see deeper
-                        long-term benefits.
-                    </p>
-                </div>
-            </section>
-
-            <section class="space-y-6">
-                <h2 class="text-2xl md:text-3xl font-serif">Signals for Zimbabwe</h2>
-                <div class="glass-panel rounded-2xl p-6 md:p-8 space-y-4">
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        For Zimbabwe, the global nomad trend raises strategic questions. Which cities could credibly host remote
-                        workers for six to twelve months at a time? Harare, with its universities, gallery scene, and growing cafe
-                        culture, is an obvious candidate. So are smaller centres with strong nature access and stable connectivity.
-                    </p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Any future visa design would need to balance opportunity with local concerns around housing affordability and
-                        infrastructure load. The countries that succeed will be those that see nomad visas not as a quick trend to
-                        chase, but as one piece of a broader talent and tourism strategy.
-                    </p>
-                </div>
-            </section>
-
-            <section class="space-y-4 border-t border-white/10 pt-10">
-                <div class="glass-panel rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                     <div>
-                        <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-2">Related Reads</p>
-                        <h3 class="text-xl font-serif mb-1">More from Global Pulse</h3>
-                        <p class="text-gray-400 text-sm">Explore the aviation and VR shifts that influence how long-stay guests choose destinations.</p>
+                        <h2 class="text-3xl md:text-4xl font-serif mb-2">Matobo &amp; Masvingo</h2>
+                        <p class="text-gray-400 text-sm md:text-base max-w-xl">
+                            Granite kopjes, San rock art and stone cities – journals from days spent between Bulawayo, Matobo and Great
+                            Zimbabwe.
+                        </p>
                     </div>
-                    <div class="space-y-3 text-xs uppercase tracking-[0.25em]">
-                        <a href="global-sustainable-skies.html" class="flex items-center justify-between text-gray-300 hover:text-zim-gold hover-trigger">
-                            <span>Sustainable Skies</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                        </a>
-                        <a href="global-vr-pre-trip.html" class="flex items-center justify-between text-gray-300 hover:text-zim-gold hover-trigger">
-                            <span>The VR Pre-Trip</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                        </a>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <a href="best-of-matobo.html" class="glass-panel rounded-2xl p-6 hover-trigger hover:bg-white/5 transition-colors flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-2">Matabeleland South &middot; Full Day</p>
+                            <h3 class="text-xl font-serif mb-2">The Best of Matobo</h3>
+                            <p class="text-gray-400 text-sm">A slow loop through kopjes, rock art and viewpoints, written as we drive, walk and pause.</p>
+                        </div>
+                        <span class="mt-4 text-xs uppercase tracking-[0.25em] text-gray-500 inline-flex items-center">Read Journal<i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></span>
+                    </a>
+                    <a href="matobo-rhino-encounter.html" class="glass-panel rounded-2xl p-6 hover-trigger hover:bg-white/5 transition-colors flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-2">Matobo &middot; Walking Safari</p>
+                            <h3 class="text-xl font-serif mb-2">Matobo Rhino Encounter</h3>
+                            <p class="text-gray-400 text-sm">Field notes from a tracking day on foot, as we move from briefing to fresh spoor to viewpoints.</p>
+                        </div>
+                        <span class="mt-4 text-xs uppercase tracking-[0.25em] text-gray-500 inline-flex items-center">Read Journal<i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></span>
+                    </a>
+                    <a href="great-zimbabwe.html" class="glass-panel rounded-2xl p-6 hover-trigger hover:bg-white/5 transition-colors flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-2">Masvingo &middot; Heritage</p>
+                            <h3 class="text-xl font-serif mb-2">Great Zimbabwe</h3>
+                            <p class="text-gray-400 text-sm">A day among stone walls and trade-wind stories, from the valley ruins to the Hill Complex.</p>
+                        </div>
+                        <span class="mt-4 text-xs uppercase tracking-[0.25em] text-gray-500 inline-flex items-center">Read Journal<i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-serif mb-2">Bulawayo &amp; Khami</h2>
+                        <p class="text-gray-400 text-sm md:text-base max-w-xl">
+                            City grids, township streets and terraced stone walls just outside Bulawayo.
+                        </p>
                     </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <a href="khami-ruins-historical-tour.html" class="glass-panel rounded-2xl p-6 hover-trigger hover:bg-white/5 transition-colors flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-2">Bulawayo &middot; Heritage</p>
+                            <h3 class="text-xl font-serif mb-2">Khami Ruins Historical Tour</h3>
+                            <p class="text-gray-400 text-sm">A day tracing terraced walls and river views at Khami, written between drives and viewpoints.</p>
+                        </div>
+                        <span class="mt-4 text-xs uppercase tracking-[0.25em] text-gray-500 inline-flex items-center">Read Journal<i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></span>
+                    </a>
+                    <a href="bulawayo-city-township-tour.html" class="glass-panel rounded-2xl p-6 hover-trigger hover:bg-white/5 transition-colors flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-2">Bulawayo &middot; City &amp; Township</p>
+                            <h3 class="text-xl font-serif mb-2">Bulawayo City & Township Tour</h3>
+                            <p class="text-gray-400 text-sm">Live notes from avenues, markets and township streets in the City of Kings.</p>
+                        </div>
+                        <span class="mt-4 text-xs uppercase tracking-[0.25em] text-gray-500 inline-flex items-center">Read Journal<i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></span>
+                    </a>
+                    <div class="hidden md:block"></div>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-serif mb-2">Victoria Falls</h2>
+                        <p class="text-gray-400 text-sm md:text-base max-w-xl">
+                            Days held in the orbit of the Falls – rainforest, markets and Zambezi sunsets.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <a href="victoria-falls-experience.html" class="glass-panel rounded-2xl p-6 hover-trigger hover:bg-white/5 transition-colors flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-2">Victoria Falls &middot; Adventure</p>
+                            <h3 class="text-xl font-serif mb-2">Victoria Falls Experience</h3>
+                            <p class="text-gray-400 text-sm">A flexible day in the spray and along the river, written between viewpoints and sunset.</p>
+                        </div>
+                        <span class="mt-4 text-xs uppercase tracking-[0.25em] text-gray-500 inline-flex items-center">Read Journal<i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></span>
+                    </a>
                 </div>
             </section>
         </div>
@@ -305,25 +308,25 @@
     <footer class="bg-black py-16 border-t border-white/10 mt-8">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
             <div class="mb-10 md:mb-0">
-                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">ZIM<span class="text-zim-gold">TOUR</span></span>
-                <a href="global.html#trends" class="text-xs uppercase tracking-[0.25em] text-gray-400 hover:text-zim-gold hover-trigger inline-flex items-center">
-                    4 Back to Global Pulse
+                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">Bushmen <span class="text-zim-gold">Travel</span></span>
+                <a href="index.html" class="text-xs uppercase tracking-[0.25em] text-gray-400 hover:text-zim-gold hover-trigger inline-flex items-center">
+                    ← Back to Home
                 </a>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-10 text-xs uppercase tracking-widest text-gray-500">
                 <div>
                     <h4 class="text-zim-gold mb-3 font-bold">Explore</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white transition-colors">Destinations</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Hotels</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Safaris</a></li>
+                        <li><a href="provinces.html" class="hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="index.html#tours" class="hover:text-white transition-colors">Tours</a></li>
+                        <li><a href="journal.html" class="hover:text-white transition-colors">Journal</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-zim-gold mb-3 font-bold">Company</h4>
                     <ul class="space-y-2">
+                        <li><a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Contact</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
                     </ul>
                 </div>
@@ -342,6 +345,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
+        // --- 0. Theme handling ---
+
         const rootHtml = document.documentElement;
         const storedTheme = localStorage.getItem('bushmen-theme');
 
@@ -419,24 +424,11 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
-        const tlLoader = gsap.timeline();
-
-        tlLoader.to('.reveal-text', { y: '0%', duration: 1, ease: 'power4.out' })
-                .to('.reveal-text-sm', { opacity: 1, duration: 1, delay: -0.5 })
-                .to('#preloader', { y: '-100%', duration: 1.2, ease: 'expo.inOut', delay: 0.5 })
-                .to('.hero-anim', {
-                    y: '0%',
-                    opacity: 1,
-                    duration: 1.2,
-                    stagger: 0.15,
-                    ease: 'power3.out'
-                }, '-=0.8');
-
         gsap.to('.parallax-img', {
             yPercent: 20,
             ease: 'none',
             scrollTrigger: {
-                trigger: '#hero',
+                trigger: 'header',
                 start: 'top top',
                 end: 'bottom top',
                 scrub: true

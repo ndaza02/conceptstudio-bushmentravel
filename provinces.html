@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZimTour | Provinces</title>
+    <title>Bushmen Travel | Destinations</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,8 +24,11 @@
                     colors: {
                         'safari-dark': '#0B0F12',
                         'safari-green': '#1A2E25',
-                        'zim-gold': '#D4AF37',
-                        'zim-gold-light': '#F4C430',
+                        'zim-gold': '#8ac544',
+                        'zim-gold-light': '#f0e78c',
+                        'bush-green': '#599f1a',
+                        'bush-green-light': '#b0ea61',
+                        'bush-sand': '#f2e793',
                     },
                     fontFamily: {
                         serif: ['"Cormorant Garamond"', 'serif'],
@@ -61,19 +64,19 @@
         .cursor-dot {
             width: 8px;
             height: 8px;
-            background-color: #D4AF37;
+            background-color: #8ac544;
         }
         .cursor-outline {
             width: 40px;
             height: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.5);
+            border: 1px solid rgba(138, 197, 68, 0.5);
             transition: width 0.2s, height 0.2s, background-color 0.2s;
         }
         body:hover .cursor-outline.hovered {
             width: 80px;
             height: 80px;
-            background-color: rgba(212, 175, 55, 0.1);
-            border-color: #D4AF37;
+            background-color: rgba(138, 197, 68, 0.1);
+            border-color: #8ac544;
             backdrop-filter: blur(2px);
         }
 
@@ -149,6 +152,64 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
+
+
+        /* Light theme overrides */
+        html[data-theme='light'] body {
+            background-color: #f9fafb;
+            color: #0f172a;
+        }
+
+        html[data-theme='light'] .glass-nav {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+        }
+
+        html[data-theme='light'] .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(15, 23, 42, 0.06);
+        }
+
+        html[data-theme='light'] .bg-safari-dark {
+            background-color: #f9fafb !important;
+        }
+
+        html[data-theme='light'] footer.bg-black {
+            background-color: #0b1120 !important;
+        }
+
+        html[data-theme='light'] .text-white {
+            color: #0f172a !important;
+        }
+
+        html[data-theme='light'] .text-white\/50 {
+            color: rgba(15, 23, 42, 0.5) !important;
+        }
+
+        html[data-theme='light'] .text-gray-300 {
+            color: #4b5563 !important;
+        }
+
+        html[data-theme='light'] .text-gray-400 {
+            color: #6b7280 !important;
+        }
+
+        html[data-theme='light'] .border-white\/10 {
+            border-color: rgba(148, 163, 184, 0.4) !important;
+        }
+
+        /* Keep province cards dark even in light theme */
+        html[data-theme='light'] #provinces .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        html[data-theme='light'] #provinces .text-white {
+            color: #ffffff !important;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -177,20 +238,27 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center h-24">
                 <a href="index.html" class="flex items-center group hover-trigger">
-                    <i data-lucide="compass" class="w-8 h-8 text-zim-gold mr-3 transform group-hover:rotate-45 transition-transform duration-500"></i>
-                    <span class="text-2xl font-serif font-bold tracking-wider text-white">ZIM<span class="text-zim-gold">TOUR</span></span>
+                    <img src="assets/bushmen-logo.png" alt="Bushmen Travel" class="h-10 w-auto mr-3">
+                    <span class="text-2xl font-serif font-bold tracking-wider text-white">Bushmen <span class="text-zim-gold">Travel</span></span>
                 </a>
 
                 <div class="flex items-center space-x-4">
                     <div class="hidden md:flex items-center space-x-12">
                         <a href="index.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
-                        <a href="global.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Global</a>
-                        <a href="provinces.html" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Provinces</a>
+                        <a href="index.html#tours" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                        <a href="provinces.html" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                        <a href="journal.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                        <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Contact</a>
                     </div>
 
-                    <button class="bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
-                        Plan Trip
+                    <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" class="lucide lucide-moon w-4 h-4 hidden" id="theme-icon-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" class="lucide lucide-sun w-4 h-4" id="theme-icon-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
                     </button>
+
+                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
+                        WhatsApp Us
+                    </a>
 
                     <button id="mobile-menu-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger">
                         <i data-lucide="menu" class="w-5 h-5"></i>
@@ -201,8 +269,10 @@
             <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 pb-4">
                 <div class="pt-4 space-y-3">
                     <a href="index.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Home</a>
-                    <a href="global.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Global</a>
-                    <a href="provinces.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Provinces</a>
+                    <a href="index.html#tours" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                    <a href="provinces.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                    <a href="journal.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Contact</a>
                 </div>
             </div>
         </div>
@@ -333,6 +403,44 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <script>
+        // --- 0. Theme handling ---
+
+        const rootHtml = document.documentElement;
+        const storedTheme = localStorage.getItem('bushmen-theme');
+
+        if (storedTheme === 'light' || storedTheme === 'dark') {
+            rootHtml.setAttribute('data-theme', storedTheme);
+        } else {
+            rootHtml.setAttribute('data-theme', 'dark');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIconMoon = document.getElementById('theme-icon-moon');
+        const themeIconSun = document.getElementById('theme-icon-sun');
+
+        function updateThemeIcons(theme) {
+            if (!themeIconMoon || !themeIconSun) return;
+            if (theme === 'light') {
+                themeIconMoon.classList.add('hidden');
+                themeIconSun.classList.remove('hidden');
+            } else {
+                themeIconMoon.classList.remove('hidden');
+                themeIconSun.classList.add('hidden');
+            }
+        }
+
+        updateThemeIcons(rootHtml.getAttribute('data-theme'));
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const current = rootHtml.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                rootHtml.setAttribute('data-theme', next);
+                localStorage.setItem('bushmen-theme', next);
+                updateThemeIcons(next);
+            });
+        }
+
         // --- 1. Data & Content Generation ---
         const provincesData = [
             { name: "Harare Metro", img: "assets/harare-cityscape.png", desc: "The Sunshine City. Business meets botanical gardens.", highlight: "Conference Hub" },

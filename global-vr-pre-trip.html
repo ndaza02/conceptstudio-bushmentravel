@@ -87,6 +87,53 @@
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
+
+        html[data-theme='light'] body {
+            background-color: #f9fafb;
+            color: #0f172a;
+        }
+
+        html[data-theme='light'] .glass-nav {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+        }
+
+        html[data-theme='light'] .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(15, 23, 42, 0.06);
+        }
+
+        html[data-theme='light'] .bg-safari-dark {
+            background-color: #f9fafb !important;
+        }
+
+        html[data-theme='light'] footer.bg-black {
+            background-color: #0b1120 !important;
+        }
+
+        html[data-theme='light'] .text-white {
+            color: #0f172a !important;
+        }
+
+        html[data-theme='light'] .text-white\/50 {
+            color: rgba(15, 23, 42, 0.5) !important;
+        }
+
+        html[data-theme='light'] .text-gray-300 {
+            color: #4b5563 !important;
+        }
+
+        html[data-theme='light'] .text-gray-400 {
+            color: #6b7280 !important;
+        }
+
+        html[data-theme='light'] .border-white\/10 {
+            border-color: rgba(148, 163, 184, 0.4) !important;
+        }
+
         #preloader {
             position: fixed;
             inset: 0;
@@ -130,6 +177,12 @@
                         <a href="global.html" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Global</a>
                         <a href="provinces.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Provinces</a>
                     </div>
+
+                    <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" class="lucide lucide-moon w-4 h-4 hidden" id="theme-icon-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" class="lucide lucide-sun w-4 h-4" id="theme-icon-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                    </button>
+
                     <button class="bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
                         Plan Trip
                     </button>
@@ -293,6 +346,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
+        const rootHtml = document.documentElement;
+        const storedTheme = localStorage.getItem('bushmen-theme');
+
+        if (storedTheme === 'light' || storedTheme === 'dark') {
+            rootHtml.setAttribute('data-theme', storedTheme);
+        } else {
+            rootHtml.setAttribute('data-theme', 'dark');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIconMoon = document.getElementById('theme-icon-moon');
+        const themeIconSun = document.getElementById('theme-icon-sun');
+
+        function updateThemeIcons(theme) {
+            if (!themeIconMoon || !themeIconSun) return;
+            if (theme === 'light') {
+                themeIconMoon.classList.add('hidden');
+                themeIconSun.classList.remove('hidden');
+            } else {
+                themeIconMoon.classList.remove('hidden');
+                themeIconSun.classList.add('hidden');
+            }
+        }
+
+        updateThemeIcons(rootHtml.getAttribute('data-theme'));
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const current = rootHtml.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                rootHtml.setAttribute('data-theme', next);
+                localStorage.setItem('bushmen-theme', next);
+                updateThemeIcons(next);
+            });
+        }
+
         lucide.createIcons();
 
         const cursorDot = document.querySelector('.cursor-dot');
