@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Bushmen Travel</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/bushmen-logo.png">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'safari-dark': '#0B0F12',
+                        'safari-green': '#1A2E25',
+                        'zim-gold': '#8ac544',
+                        'zim-gold-light': '#f0e78c',
+                        'bush-green': '#599f1a',
+                        'bush-green-light': '#b0ea61',
+                        'bush-sand': '#f2e793',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F12;
+            color: #f8fafc;
+            overflow-x: hidden;
+            cursor: none;
+        }
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #8ac544;
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(138, 197, 68, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        body:hover .cursor-outline.hovered {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(138, 197, 68, 0.1);
+            border-color: #8ac544;
+            backdrop-filter: blur(2px);
+        }
+        @media (max-width: 768px) {
+            body {
+                cursor: auto;
+            }
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-nav {
+            background: rgba(11, 15, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        html[data-theme='light'] body {
+            background-color: #f9fafb;
+            color: #0f172a;
+        }
+
+        html[data-theme='light'] .glass-nav {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+        }
+
+        html[data-theme='light'] .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(15, 23, 42, 0.06);
+        }
+
+        html[data-theme='light'] .bg-safari-dark {
+            background-color: #f9fafb !important;
+        }
+
+        html[data-theme='light'] footer.bg-black {
+            background-color: #0b1120 !important;
+        }
+
+        html[data-theme='light'] .text-white {
+            color: #0f172a !important;
+        }
+
+        html[data-theme='light'] .text-white\/50 {
+            color: rgba(15, 23, 42, 0.5) !important;
+        }
+
+        html[data-theme='light'] .text-gray-300 {
+            color: #4b5563 !important;
+        }
+
+        html[data-theme='light'] .text-gray-400 {
+            color: #6b7280 !important;
+        }
+
+        html[data-theme='light'] .border-white\/10 {
+            border-color: rgba(148, 163, 184, 0.4) !important;
+        }
+
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #0B0F12;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loader-text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div id="preloader">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-7xl font-serif text-zim-gold loader-text overflow-hidden">
+                <span class="inline-block reveal-text">CONTACT US</span>
+            </h1>
+            <p class="text-white/50 mt-4 tracking-[0.5em] text-xs md:text-sm uppercase reveal-text-sm overflow-hidden">
+                <span class="inline-block">Get in Touch</span>
+            </p>
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="flex items-center group hover-trigger">
+                    <i data-lucide="compass" class="w-8 h-8 text-zim-gold mr-3 transform group-hover:rotate-45 transition-transform duration-500"></i>
+                    <span class="text-2xl font-serif font-bold tracking-wider text-white">BUSHMEN <span class="text-zim-gold">TRAVEL</span></span>
+                </a>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-12">
+                        <a href="index.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                        <a href="index.html#tours" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                        <a href="index.html#experiences" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                        <a href="journal.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                        <a href="contact.html" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Contact</a>
+                    </div>
+
+                    <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" class="lucide lucide-moon w-4 h-4 hidden" id="theme-icon-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" class="lucide lucide-sun w-4 h-4" id="theme-icon-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                    </button>
+
+                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex bg-bush-green text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-bush-green-light transition-colors duration-300 hover-trigger">
+                        WhatsApp Us
+                    </a>
+                    <button id="mobile-menu-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 pb-4">
+                <div class="pt-4 space-y-3">
+                    <a href="index.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                    <a href="index.html#tours" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                    <a href="index.html#experiences" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                    <a href="journal.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                    <a href="contact.html" class="block text-sm uppercase tracking-widest text-gray-300 text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Contact</a>
+                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="relative w-full min-h-[85vh] md:min-h-[90vh] lg:min-h-screen overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-safari-dark/90 z-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-safari-dark via-transparent to-transparent z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-zim-gold/10 via-transparent to-transparent z-10"></div>
+            <video class="w-full h-full object-cover parallax-img scale-110" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/buffalo-sunset.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="relative z-20 px-4 max-w-3xl mx-auto text-center">
+            <p class="text-zim-gold text-xs md:text-sm tracking-[0.4em] uppercase mb-4 hero-anim translate-y-full">Contact · Enquiries</p>
+            <h1 class="text-4xl md:text-6xl font-serif leading-tight mb-4 hero-anim translate-y-full">Get in Touch</h1>
+            <p class="text-gray-300 text-sm md:text-base hero-anim opacity-0">
+                Have a question about our tours or want to plan your Zimbabwe adventure? We're here to help.
+            </p>
+        </div>
+    </header>
+
+    <main class="bg-safari-dark py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-6 space-y-16">
+            <section class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif mb-4">Send us a Message</h2>
+                        <p class="text-gray-400 text-sm">
+                            Fill out the form below and we'll get back to you as soon as possible. 
+                            For urgent enquiries, feel free to WhatsApp us directly.
+                        </p>
+                    </div>
+
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                        <input type="hidden" name="access_key" value="8a8a73da-d19a-4b19-89e9-31d7dcb3fe9b">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 bg-safari-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-zim-gold focus:ring-1 focus:ring-zim-gold transition-colors"
+                                   placeholder="John Doe">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 bg-safari-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-zim-gold focus:ring-1 focus:ring-zim-gold transition-colors"
+                                   placeholder="john@example.com">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" 
+                                   class="w-full px-4 py-3 bg-safari-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-zim-gold focus:ring-1 focus:ring-zim-gold transition-colors"
+                                   placeholder="+263 123 456 789">
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject *</label>
+                            <select id="subject" name="subject" required 
+                                    class="w-full px-4 py-3 bg-safari-dark border border-white/10 rounded-lg text-white focus:outline-none focus:border-zim-gold focus:ring-1 focus:ring-zim-gold transition-colors">
+                                <option value="">Select a topic</option>
+                                <option value="tour-enquiry">Tour Enquiry</option>
+                                <option value="custom-itinerary">Custom Itinerary</option>
+                                <option value="general-question">General Question</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full px-4 py-3 bg-safari-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-zim-gold focus:ring-1 focus:ring-zim-gold transition-colors resize-none"
+                                      placeholder="Tell us about your travel plans or questions..."></textarea>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full bg-bush-green text-black px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-bush-green-light transition-colors duration-300 hover-trigger">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif mb-6">Other Ways to Reach Us</h2>
+                        
+                        <div class="space-y-6">
+                            <div class="glass-panel rounded-2xl p-6">
+                                <div class="flex items-start space-x-4">
+                                    <i data-lucide="message-circle" class="w-6 h-6 text-zim-gold flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-white mb-2">WhatsApp</h3>
+                                        <p class="text-gray-400 text-sm mb-3">Fastest way to get a response</p>
+                                        <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" 
+                                           class="inline-flex items-center text-zim-gold hover:text-zim-gold-light transition-colors text-sm">
+                                            +263 772 787 909
+                                            <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="glass-panel rounded-2xl p-6">
+                                <div class="flex items-start space-x-4">
+                                    <i data-lucide="mail" class="w-6 h-6 text-zim-gold flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-white mb-2">Email</h3>
+                                        <p class="text-gray-400 text-sm mb-3">For detailed enquiries</p>
+                                        <a href="mailto:info@bushmentravel.co.zw" 
+                                           class="inline-flex items-center text-zim-gold hover:text-zim-gold-light transition-colors text-sm">
+                                            info@bushmentravel.co.zw
+                                            <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="glass-panel rounded-2xl p-6">
+                                <div class="flex items-start space-x-4">
+                                    <i data-lucide="clock" class="w-6 h-6 text-zim-gold flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-white mb-2">Response Times</h3>
+                                        <p class="text-gray-400 text-sm">
+                                            WhatsApp: Within 2 hours during business hours<br>
+                                            Email: Within 24 hours
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-2xl p-6">
+                        <h3 class="font-semibold text-white mb-4">Office Hours</h3>
+                        <div class="space-y-2 text-sm text-gray-400">
+                            <div class="flex justify-between">
+                                <span>Monday - Friday</span>
+                                <span>8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Saturday</span>
+                                <span>9:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-black py-16 border-t border-white/10 mt-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
+            <div class="mb-10 md:mb-0">
+                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">BUSHMEN <span class="text-zim-gold">TRAVEL</span></span>
+                <p class="text-gray-400 text-sm max-w-xs">
+                    Your gateway to authentic Zimbabwe experiences. 
+                    From Victoria Falls to the Matobo Hills, we craft journeys that matter.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-10 text-xs uppercase tracking-widest text-gray-500">
+                <div>
+                    <h4 class="text-zim-gold mb-3 font-bold">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#tours" class="hover:text-white transition-colors">Tours</a></li>
+                        <li><a href="index.html#experiences" class="hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="journal.html" class="hover:text-white transition-colors">Journal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-zim-gold mb-3 font-bold">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-zim-gold mb-3 font-bold">Connect</h4>
+                    <div class="space-y-3">
+                        <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" 
+                           class="flex items-center text-gray-400 hover:text-zim-gold transition-colors">
+                            <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>
+                            WhatsApp
+                        </a>
+                        <a href="mailto:info@bushmentravel.co.zw" 
+                           class="flex items-center text-gray-400 hover:text-zim-gold transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/10 text-center">
+            <p class="text-gray-500 text-xs">
+                &copy; 2024 Bushmen Travel. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        const rootHtml = document.documentElement;
+        const storedTheme = localStorage.getItem('bushmen-theme');
+
+        if (storedTheme === 'light' || storedTheme === 'dark') {
+            rootHtml.setAttribute('data-theme', storedTheme);
+        } else {
+            rootHtml.setAttribute('data-theme', 'dark');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIconMoon = document.getElementById('theme-icon-moon');
+        const themeIconSun = document.getElementById('theme-icon-sun');
+
+        function updateThemeIcons(theme) {
+            if (!themeIconMoon || !themeIconSun) return;
+            if (theme === 'light') {
+                themeIconMoon.classList.add('hidden');
+                themeIconSun.classList.remove('hidden');
+            } else {
+                themeIconMoon.classList.remove('hidden');
+                themeIconSun.classList.add('hidden');
+            }
+        }
+
+        updateThemeIcons(rootHtml.getAttribute('data-theme'));
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const current = rootHtml.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                const next = current === 'light' ? 'dark' : 'light';
+                rootHtml.setAttribute('data-theme', next);
+                localStorage.setItem('bushmen-theme', next);
+                updateThemeIcons(next);
+            });
+        }
+
+        lucide.createIcons();
+
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            if (cursorDot && cursorOutline) {
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { duration: 500, fill: 'forwards' });
+            }
+        });
+
+        document.querySelectorAll('.hover-trigger').forEach(el => {
+            if (!cursorOutline) return;
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('hovered');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.classList.remove('hovered');
+            });
+        });
+
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const tlLoader = gsap.timeline();
+
+        tlLoader.to('.reveal-text', { y: '0%', duration: 1, ease: 'power4.out' })
+                .to('.reveal-text-sm', { opacity: 1, duration: 1, delay: -0.5 })
+                .to('#preloader', { y: '-100%', duration: 1.2, ease: 'expo.inOut', delay: 0.5 })
+                .to('.hero-anim', { y: '0%', opacity: 1, duration: 1, stagger: 0.2, ease: 'power3.out', delay: -0.8 }, '-=0.6');
+
+        // Parallax effect
+        gsap.to('.parallax-img', {
+            yPercent: -50,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#hero',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        // Form submission handling
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Formspree will handle the actual submission
+                // This is just for visual feedback
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
