@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mana Pools National Park Complete Guide | Bushmen Travel</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/bushmen-logo.png">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'safari-dark': '#0B0F12',
+                        'safari-green': '#1A2E25',
+                        'zim-gold': '#8ac544',
+                        'zim-gold-light': '#f0e78c',
+                        'bush-green': '#599f1a',
+                        'bush-green-light': '#b0ea61',
+                        'bush-sand': '#f2e793',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F12;
+            color: #f8fafc;
+            overflow-x: hidden;
+            cursor: none;
+            /* Hiding default cursor for custom one */
+        }
+
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #8ac544;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(138, 197, 68, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        body:hover .cursor-outline.hovered {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(138, 197, 68, 0.1);
+            border-color: #8ac544;
+            backdrop-filter: blur(2px);
+        }
+
+
+        /* Mobile adjustments: show default cursor and hide custom cursor on small screens */
+        @media (max-width: 768px) {
+            body {
+                cursor: auto;
+            }
+
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+        }
+
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .font-sans {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1A2E25;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8ac544;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #599f1a;
+        }
+
+        /* Glass Navigation */
+        .glass-nav {
+            background: rgba(11, 15, 18, 0.4);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="flex items-center group hover-trigger">
+                    <img src="assets/bushmen-logo.png" alt="Bushmen Travel"
+                        class="h-10 sm:h-12 md:h-16 lg:h-20 w-auto mr-3">
+                    <span class="text-xl sm:text-2xl md:text-3xl font-serif font-bold tracking-wider text-white">Bushmen
+                        <span class="text-zim-gold">Travel</span></span>
+                </a>
+
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-12">
+                        <a href="index.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                        <a href="index.html#tours"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                        <a href="index.html#experiences"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                        <a href="zimbabwe-travel-guide.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Travel
+                            Guide</a>
+                        <a href="journal.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                        <a href="contact.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Contact</a>
+                    </div>
+
+                    <button id="theme-toggle"
+                        class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger"
+                        aria-label="Toggle theme">
+                        <i data-lucide="moon" class="w-4 h-4" id="theme-icon-moon"></i>
+                        <i data-lucide="sun" class="w-4 h-4 hidden" id="theme-icon-sun"></i>
+                    </button>
+
+                    <button id="mobile-menu-toggle" class="md:hidden text-white hover:text-zim-gold transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-6 py-4 space-y-3 bg-safari-dark/95 backdrop-blur-sm border-t border-white/10">
+                <a href="index.html" class="block text-white hover:text-zim-gold transition-colors">Home</a>
+                <a href="index.html#tours" class="block text-white hover:text-zim-gold transition-colors">Tours</a>
+                <a href="index.html#experiences"
+                    class="block text-white hover:text-zim-gold transition-colors">Destinations</a>
+                <a href="zimbabwe-travel-guide.html"
+                    class="block text-white hover:text-zim-gold transition-colors">Travel Guide</a>
+                <a href="journal.html" class="block text-white hover:text-zim-gold transition-colors">Journal</a>
+                <a href="contact.html" class="block text-white hover:text-zim-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-safari-dark/80 via-safari-green/60 to-safari-dark/90 z-10">
+        </div>
+
+        <div class="absolute inset-0">
+            <div
+                class="h-full w-full bg-gradient-to-br from-zim-gold/20 via-bush-green/10 to-zim-gold/20 animate-pulse">
+            </div>
+        </div>
+
+        <div class="relative z-20 text-center px-6 max-w-4xl mx-auto animate-fade-in-up">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold text-zim-gold mb-6">
+                Mana Pools National Park
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                UNESCO World Heritage Wilderness - Africa's Premier Walking Safari Destination
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#overview"
+                    class="bg-zim-gold text-safari-dark px-8 py-3 rounded-full font-semibold hover:bg-zim-gold-light transition-all transform hover:scale-105">
+                    Discover More
+                </a>
+                <a href="#activities"
+                    class="border-2 border-zim-gold text-zim-gold px-8 py-3 rounded-full font-semibold hover:bg-zim-gold hover:text-safari-dark transition-all transform hover:scale-105">
+                    View Activities
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">The Wild Heart of Africa</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Mana Pools National Park is a UNESCO World Heritage Site renowned for its pristine wilderness and
+                    exceptional wildlife viewing. Located on the Zambezi River, this 2,196 square kilometer park offers
+                    some of Africa's most authentic safari experiences, particularly famous for walking safaris and
+                    canoeing adventures.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <div class="text-zim-gold mb-4">
+                        <i data-lucide="info" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Key Features</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• UNESCO World Heritage Site (1984)</li>
+                        <li>• Area: 2,196 square kilometers</li>
+                        <li>• Four main pools: Main, Chine, Long, Chisambuk</li>
+                        <li>• Part of Middle Zambezi Biosphere Reserve</li>
+                        <li>• No permanent lodges - only temporary camps</li>
+                        <li>• Famous for walking and canoeing safaris</li>
+                        <li>• Remote and pristine wilderness experience</li>
+                    </ul>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <div class="text-zim-gold mb-4">
+                        <i data-lucide="map" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Location & Access</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <p>Located in northern Zimbabwe on the southern bank of the Zambezi River, opposite Zambia's
+                            Lower Zambezi National Park. The park forms part of a massive transfrontier conservation
+                            area.</p>
+                        <p>Access by road from Harare (400km) or by charter flight to Mana Main airstrip. 4x4 essential
+                            during rainy season.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wildlife Highlights -->
+    <section id="wildlife" class="py-20 px-6 bg-safari-green/20">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Wildlife Highlights</h2>
+                <p class="text-lg text-gray-300">Incredible concentrations and unique behaviors</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Large Herbivores -->
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg overflow-hidden border border-zim-gold/20">
+                    <div
+                        class="h-32 bg-gradient-to-br from-green-900/30 to-emerald-900/20 flex items-center justify-center">
+                        <i data-lucide="deer" class="w-12 h-12 text-zim-gold"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl text-zim-gold mb-4">Large Herbivores</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• <strong>Elephants:</strong> Large concentrations, famous for standing on hind legs
+                            </li>
+                            <li>• <strong>Buffalo:</strong> Massive herds, excellent predator interactions</li>
+                            <li>• <strong>Zebra & Wildebeest:</strong> Abundant throughout the floodplains</li>
+                            <li>• <strong>Waterbuck & Eland:</strong> Common along riverine areas</li>
+                            <li>• <strong>Kudu & Impala:</strong> Numerous and photogenic</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Predators -->
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg overflow-hidden border border-zim-gold/20">
+                    <div
+                        class="h-32 bg-gradient-to-br from-red-900/30 to-orange-900/20 flex items-center justify-center">
+                        <i data-lucide="eye" class="w-12 h-12 text-zim-gold"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl text-zim-gold mb-4">Predators</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• <strong>Lions:</strong> Famous prides, excellent sightings</li>
+                            <li>• <strong>Leopards:</strong> Regularly seen, especially along river</li>
+                            <li>• <strong>Wild Dogs:</strong> Active packs, denning sites</li>
+                            <li>• <strong>Cheetahs:</strong> Present but more elusive</li>
+                            <li>• <strong>Spotted Hyenas:</strong> Common and vocal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Unique Behaviors -->
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg overflow-hidden border border-zim-gold/20">
+                    <div
+                        class="h-32 bg-gradient-to-br from-purple-900/30 to-pink-900/20 flex items-center justify-center">
+                        <i data-lucide="star" class="w-12 h-12 text-zim-gold"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl text-zim-gold mb-4">Unique Behaviors</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• <strong>Standing Elephants:</strong> Famous for reaching high branches</li>
+                            <li>• <strong>Tolerant Wildlife:</strong> Animals habituated to walking safaris</li>
+                            <li>• <strong>River Crossings:</strong> Dramatic animal movements</li>
+                            <li>• <strong>Predator-Prey Dynamics:</strong> Excellent predator action</li>
+                            <li>• <strong>Bird Life:</strong> Over 380 species recorded</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities -->
+    <section id="activities" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Safari Activities</h2>
+                <p class="text-lg text-gray-300">Authentic wilderness experiences</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Walking Safaris</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p><strong>The Ultimate Experience:</strong> Mana Pools is Africa's premier walking safari
+                            destination. Expert guides lead you through diverse terrains from riverine forests to open
+                            floodplains.</p>
+                        <p><strong>What to Expect:</strong> Close encounters with wildlife, tracking experiences,
+                            learning about flora and fauna, and the thrill of being on foot in big game country.</p>
+                        <p><strong>Duration:</strong> Half-day walks to multi-day walking safaris with overnight
+                            camping.</p>
+                    </div>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Canoeing Adventures</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p><strong>Zambezi River:</strong> Multi-day canoeing safaris along the Zambezi offer unique
+                            wildlife viewing from water level. Drift past elephants, buffalo, and numerous bird species.
+                        </p>
+                        <p><strong>Experience:</strong> Peaceful paddling, excellent photography opportunities,
+                            riverside camping, and incredible sunsets over the Zambezi.</p>
+                        <p><strong>Safety:</strong> Professional guides, safety briefings, and support boats ensure a
+                            secure experience.</p>
+                    </div>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Game Drives</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p><strong>Traditional Drives:</strong> Morning and afternoon game drives in open vehicles
+                            provide excellent wildlife viewing opportunities.</p>
+                        <p><strong>Focus Areas:</strong> Riverine areas, floodplains, and around the four main pools
+                            where wildlife concentrates.</p>
+                        <p><strong>Photography:</strong> Excellent for wildlife photography with abundant subjects and
+                            beautiful landscapes.</p>
+                    </div>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Fly Camping</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p><strong>Ultimate Wilderness:</strong> Mobile fly camping experiences for the adventurous.
+                            Sleep under the stars in remote areas of the park.</p>
+                        <p><strong>Experience:</strong> Complete immersion in wilderness, night sounds, and exceptional
+                            stargazing away from any light pollution.</p>
+                        <p><strong>Comfort:</strong> Basic but comfortable camping with hot meals prepared over open
+                            fires.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Time to Visit -->
+    <section class="py-20 px-6 bg-safari-green/20">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Best Time to Visit</h2>
+                <p class="text-lg text-gray-300">Seasonal guide for optimal experiences</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Dry Season (May-October)</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p><strong>Peak Season:</strong> Best time for walking safaris and wildlife viewing. Animals
+                            concentrate around water sources and riverine areas.</p>
+                        <p><strong>Weather:</strong> Dry, sunny days, cool nights. Minimal rainfall, excellent
+                            visibility.</p>
+                        <p><strong>Wildlife:</strong> Excellent game viewing, predator activity, and elephant
+                            concentrations.</p>
+                        <p><strong>Activities:</strong> Perfect for walking safaris, canoeing, and all outdoor
+                            activities.</p>
+                    </div>
+                </div>
+
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Green Season (November-April)</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p><strong>Lush Landscape:</strong> Beautiful green vegetation, dramatic skies, and fewer
+                            visitors.</p>
+                        <p><strong>Bird Watching:</strong> Excellent time for birding with migratory species present.
+                        </p>
+                        <p><strong>Challenges:</strong> Some areas become inaccessible, walking safaris limited, higher
+                            temperatures.</p>
+                        <p><strong>Considerations:</strong> Lower rates, more intimate experience, but limited access to
+                            some areas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Information -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Practical Information</h2>
+                <p class="text-lg text-gray-300">Essential details for your Mana Pools adventure</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Getting There</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">By Road</h4>
+                            <p>400km from Harare (6-7 hours). 4x4 essential, especially during rainy season. Roads can
+                                be challenging.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">By Air</h4>
+                            <p>Charter flights to Mana Main airstrip. Scheduled flights from Harare available
+                                seasonally.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">Access Points</h4>
+                            <p>Main gate at Nyamepi, several other entry points for 4x4 vehicles. Check road conditions
+                                before travel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Accommodation</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">Luxury Tented Camps</h4>
+                            <p>Ruckomechi, Kanga Camp, Chitake Springs - premium tented camps with excellent guides.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">Mobile Safaris</h4>
+                            <p>Various operators offer mobile walking and canoeing safaris with fly camping.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">Self-Catering</h4>
+                            <p>Nyamepi campsite and several other public campsites. Basic facilities, bring all
+                                supplies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                <h3 class="font-serif text-xl text-zim-gold mb-4">Essential Tips</h3>
+                <div class="grid md:grid-cols-2 gap-6 text-gray-300 text-sm">
+                    <div>
+                        <h4 class="font-semibold text-zim-gold-light mb-2">What to Bring</h4>
+                        <ul class="space-y-1">
+                            <li>• Lightweight neutral clothing</li>
+                            <li>• Comfortable walking boots</li>
+                            <li>• Wide-brimmed hat and sunscreen</li>
+                            <li>• Insect repellent (malaria area)</li>
+                            <li>• Binoculars and camera</li>
+                            <li>• Head torch for camping</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-zim-gold-light mb-2">Safety Guidelines</h4>
+                        <ul class="space-y-1">
+                            <li>• Always follow guide instructions</li>
+                            <li>• Maintain safe distance from wildlife</li>
+                            <li>• No walking without armed guide</li>
+                            <li>• Proper malaria prophylaxis essential</li>
+                            <li>• Carry sufficient water</li>
+                            <li>• Inform someone of your plans</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conservation -->
+    <section class="py-20 px-6 bg-safari-green/20">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Conservation & Protection</h2>
+                <p class="text-lg text-gray-300">Preserving this pristine wilderness</p>
+            </div>
+
+            <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-serif text-xl text-zim-gold mb-4">UNESCO Status</h3>
+                        <p class="text-gray-300 text-sm">
+                            Mana Pools was designated a UNESCO World Heritage Site in 1984 for its outstanding natural
+                            beauty and ecological significance. The park is recognized for its pristine wilderness,
+                            exceptional wildlife concentrations, and unique landscape features.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl text-zim-gold mb-4">Conservation Challenges</h3>
+                        <p class="text-gray-300 text-sm">
+                            The park faces challenges from poaching, particularly of elephants and rhinos. Conservation
+                            efforts focus on anti-poaching patrols, community engagement, and sustainable tourism
+                            practices that support both wildlife protection and local communities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-6 bg-gradient-to-r from-zim-gold/20 to-bush-green/20">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Experience Mana Pools</h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Discover Africa's ultimate wilderness destination with Bushmen Travel - walking safaris, canoeing
+                adventures, and authentic bush experiences.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html"
+                    class="bg-zim-gold text-safari-dark px-8 py-3 rounded-full font-semibold hover:bg-zim-gold-light transition-all transform hover:scale-105">
+                    Plan Your Adventure
+                </a>
+                <a href="zimbabwe-travel-guide.html"
+                    class="border-2 border-zim-gold text-zim-gold px-8 py-3 rounded-full font-semibold hover:bg-zim-gold hover:text-safari-dark transition-all transform hover:scale-105">
+                    More Destinations
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
+            <div class="mb-12 md:mb-0">
+                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">Bushmen <span
+                        class="text-zim-gold">Travel</span></span>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="twitter"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12 text-sm uppercase tracking-widest">
+                <div>
+                    <h4 class="text-zim-gold mb-4 font-bold">Explore</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li><a href="#" class="hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hotels</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safaris</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-zim-gold mb-4 font-bold">Company</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-zim-gold mb-4 font-bold">Newsletter</h4>
+                    <div class="flex border-b border-gray-700 pb-2">
+                        <input type="email" placeholder="Email Address"
+                            class="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600">
+                        <button class="text-zim-gold hover:text-white uppercase font-bold text-xs">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // --- 0. Theme handling ---
+
+        const rootHtml = document.documentElement;
+        const storedTheme = localStorage.getItem('bushmen-theme');
+
+        if (storedTheme === 'light' || storedTheme === 'dark') {
+            rootHtml.setAttribute('data-theme', storedTheme);
+        } else {
+            rootHtml.setAttribute('data-theme', 'dark');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIconMoon = document.getElementById('theme-icon-moon');
+        const themeIconSun = document.getElementById('theme-icon-sun');
+
+        function updateThemeIcons(theme) {
+            if (!themeIconMoon || !themeIconSun) return;
+            if (theme === 'light') {
+                themeIconMoon.classList.add('hidden');
+                themeIconSun.classList.remove('hidden');
+            } else {
+                themeIconMoon.classList.remove('hidden');
+                themeIconSun.classList.add('hidden');
+            }
+        }
+
+        updateThemeIcons(rootHtml.getAttribute('data-theme'));
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = rootHtml.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+                rootHtml.setAttribute('data-theme', newTheme);
+                localStorage.setItem('bushmen-theme', newTheme);
+                updateThemeIcons(newTheme);
+            });
+        }
+
+        // --- 1. Custom Cursor ---
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        if (cursorDot && cursorOutline) {
+            document.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                cursorOutline.style.left = `${posX}px`;
+                cursorOutline.style.top = `${posY}px`;
+            });
+
+            document.addEventListener('mousedown', () => {
+                cursorOutline.classList.add('hovered');
+            });
+
+            document.addEventListener('mouseup', () => {
+                cursorOutline.classList.remove('hovered');
+            });
+
+            const hoverElements = document.querySelectorAll('.hover-trigger');
+            hoverElements.forEach(element => {
+                element.addEventListener('mouseenter', () => cursorOutline.classList.add('hovered'));
+                element.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
+            });
+        }
+
+        // --- 2b. Mobile navigation toggle ---
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // --- 3. GSAP Animations ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

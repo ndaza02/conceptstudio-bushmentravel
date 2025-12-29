@@ -1,18 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bushmen Travel | Destinations</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -47,7 +50,8 @@
             background-color: #0B0F12;
             color: #f8fafc;
             overflow-x: hidden;
-            cursor: none; /* Hiding default cursor for custom one */
+            cursor: none;
+            /* Hiding default cursor for custom one */
         }
 
 
@@ -62,17 +66,20 @@
             z-index: 9999;
             pointer-events: none;
         }
+
         .cursor-dot {
             width: 8px;
             height: 8px;
             background-color: #8ac544;
         }
+
         .cursor-outline {
             width: 40px;
             height: 40px;
             border: 1px solid rgba(138, 197, 68, 0.5);
             transition: width 0.2s, height 0.2s, background-color 0.2s;
         }
+
         body:hover .cursor-outline.hovered {
             width: 80px;
             height: 80px;
@@ -85,6 +92,7 @@
             body {
                 cursor: auto;
             }
+
             .cursor-dot,
             .cursor-outline {
                 display: none;
@@ -94,7 +102,8 @@
 
         /* Smooth Scroll Behavior Override for Horizontal Section */
         .horizontal-scroll-container {
-            width: 500%; /* Width depends on number of slides */
+            width: 500%;
+            /* Width depends on number of slides */
             height: 100%;
             display: flex;
             flex-wrap: nowrap;
@@ -108,6 +117,7 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+
         .glass-nav {
             background: rgba(11, 15, 18, 0.8);
             backdrop-filter: blur(12px);
@@ -125,9 +135,11 @@
             justify-content: center;
             align-items: center;
         }
+
         .loader-text {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
+
         .char {
             transform: translateY(115%);
             transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -139,19 +151,26 @@
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
             color: transparent;
         }
-        
+
         /* Marquee */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
         }
+
         .marquee-content {
             display: inline-block;
             animation: marquee 30s linear infinite;
         }
+
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
 
@@ -213,6 +232,7 @@
         }
     </style>
 </head>
+
 <body class="antialiased">
 
 
@@ -239,29 +259,42 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center h-24">
                 <a href="index.html" class="flex items-center group hover-trigger">
-                    <img src="assets/bushmen-logo.png" alt="Bushmen Travel" class="h-10 sm:h-12 md:h-16 lg:h-20 w-auto mr-3">
-                    <span class="text-xl sm:text-2xl md:text-3xl font-serif font-bold tracking-wider text-white">Bushmen <span class="text-zim-gold">Travel</span></span>
+                    <img src="assets/bushmen-logo.png" alt="Bushmen Travel"
+                        class="h-10 sm:h-12 md:h-16 lg:h-20 w-auto mr-3">
+                    <span class="text-xl sm:text-2xl md:text-3xl font-serif font-bold tracking-wider text-white">Bushmen
+                        <span class="text-zim-gold">Travel</span></span>
                 </a>
 
                 <div class="flex items-center space-x-4">
                     <div class="hidden md:flex items-center space-x-12">
-                        <a href="index.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
-                        <a href="index.html#tours" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Tours</a>
-                        <a href="index.html#experiences" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
-                        <a href="journal.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Journal</a>
-                        <a href="contact.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Contact</a>
+                        <a href="index.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                        <a href="index.html#tours"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                        <a href="index.html#experiences"
+                            class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                        <a href="journal.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                                                <a href="zimbabwe-travel-guide.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Travel Guide</a>
+                        <a href="contact.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Contact</a>
                     </div>
 
-                    <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger" aria-label="Toggle theme">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" class="lucide lucide-moon w-4 h-4 hidden" id="theme-icon-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" class="lucide lucide-sun w-4 h-4" id="theme-icon-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                    <button id="theme-toggle"
+                        class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger"
+                        aria-label="Toggle theme">
+                        <i data-lucide="moon" class="w-4 h-4" id="theme-icon-moon"></i>
+                        <i data-lucide="sun" class="w-4 h-4 hidden" id="theme-icon-sun"></i>
                     </button>
 
-                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
+                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer"
+                        class="hidden md:inline-flex bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
                         WhatsApp Us
                     </a>
 
-                    <button id="mobile-menu-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger">
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger">
                         <i data-lucide="menu" class="w-5 h-5"></i>
                     </button>
                 </div>
@@ -269,11 +302,18 @@
 
             <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 pb-4">
                 <div class="pt-4 space-y-3">
-                    <a href="index.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Home</a>
-                    <a href="index.html#tours" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Tours</a>
-                    <a href="index.html#experiences" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
-                    <a href="journal.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Journal</a>
-                    <a href="contact.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Contact</a>
+                    <a href="index.html"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                    <a href="index.html#tours"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                    <a href="index.html#experiences"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                    <a href="journal.html"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                                        <a href="zimbabwe-travel-guide.html"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Travel Guide</a>
+                    <a href="contact.html"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Contact</a>
                 </div>
             </div>
         </div>
@@ -286,25 +326,28 @@
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-safari-dark z-10"></div>
             <div class="absolute inset-0 bg-black/40 z-0"></div>
-            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2600&auto=format&fit=crop" 
-                 class="w-full h-full object-cover parallax-img scale-110" alt="Zimbabwe Landscapes">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2600&auto=format&fit=crop"
+                class="w-full h-full object-cover parallax-img scale-110" alt="Zimbabwe Landscapes">
         </div>
 
 
         <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
             <div class="overflow-hidden mb-2">
-                <p class="text-zim-gold text-sm md:text-base tracking-[0.3em] uppercase font-semibold hero-anim translate-y-full">
+                <p
+                    class="text-zim-gold text-sm md:text-base tracking-[0.3em] uppercase font-semibold hero-anim translate-y-full">
                     From Highlands to Falls
                 </p>
             </div>
             <div class="overflow-hidden my-4">
-                <h1 class="text-5xl md:text-7xl font-serif font-medium text-white leading-none hero-anim translate-y-full">
+                <h1
+                    class="text-5xl md:text-7xl font-serif font-medium text-white leading-none hero-anim translate-y-full">
                     Explore Every Province
                 </h1>
             </div>
             <div class="overflow-hidden mb-8">
                 <p class="text-gray-300 max-w-2xl mx-auto hero-anim opacity-0">
-                    A curated overview of Zimbabwe's ten provinces, blending wildlife, culture, history, and adventure into one continuous journey.
+                    A curated overview of Zimbabwe's ten provinces, blending wildlife, culture, history, and adventure
+                    into one continuous journey.
                 </p>
             </div>
         </div>
@@ -315,17 +358,17 @@
     <div class="bg-zim-gold text-safari-dark py-3 border-y border-black relative z-30">
         <div class="marquee-container">
             <div class="marquee-content font-bold text-sm uppercase tracking-widest">
-                <span class="mx-8">â— Matabeleland North â€“ Victoria Falls & Hwange</span>
-                <span class="mx-8">â— Manicaland â€“ Eastern Highlands & Tea Estates</span>
-                <span class="mx-8">â— Masvingo â€“ Great Zimbabwe Ruins</span>
-                <span class="mx-8">â— Mashonaland West â€“ Kariba & Mana Pools</span>
-                <span class="mx-8">â— Midlands â€“ Antelope Park & Central Hub</span>
+                <span class="mx-8">&bull; Matabeleland North &mdash; Victoria Falls &amp; Hwange</span>
+                <span class="mx-8">&bull; Manicaland &mdash; Eastern Highlands &amp; Tea Estates</span>
+                <span class="mx-8">&bull; Masvingo &mdash; Great Zimbabwe Ruins</span>
+                <span class="mx-8">&bull; Mashonaland West &mdash; Kariba &amp; Mana Pools</span>
+                <span class="mx-8">&bull; Midlands &mdash; Antelope Park &amp; Central Hub</span>
                 <!-- Duplicate for seamless loop -->
-                <span class="mx-8">â— Matabeleland North â€“ Victoria Falls & Hwange</span>
-                <span class="mx-8">â— Manicaland â€“ Eastern Highlands & Tea Estates</span>
-                <span class="mx-8">â— Masvingo â€“ Great Zimbabwe Ruins</span>
-                <span class="mx-8">â— Mashonaland West â€“ Kariba & Mana Pools</span>
-                <span class="mx-8">â— Midlands â€“ Antelope Park & Central Hub</span>
+                <span class="mx-8">&bull; Matabeleland North &mdash; Victoria Falls &amp; Hwange</span>
+                <span class="mx-8">&bull; Manicaland &mdash; Eastern Highlands &amp; Tea Estates</span>
+                <span class="mx-8">&bull; Masvingo &mdash; Great Zimbabwe Ruins</span>
+                <span class="mx-8">&bull; Mashonaland West &mdash; Kariba &amp; Mana Pools</span>
+                <span class="mx-8">&bull; Midlands &mdash; Antelope Park &amp; Central Hub</span>
             </div>
         </div>
     </div>
@@ -334,21 +377,26 @@
     <!-- Horizontal Scroll Section: Provinces -->
     <section id="provinces" class="relative h-screen overflow-hidden bg-[#0F1418]">
         <div class="absolute top-12 left-12 z-20">
-            <h2 class="text-4xl md:text-6xl font-serif text-white">Regional <span class="text-zim-gold">Deep Dive</span></h2>
+            <h2 class="text-4xl md:text-6xl font-serif text-white">Regional <span class="text-zim-gold">Deep Dive</span>
+            </h2>
             <p class="text-sm text-gray-400 mt-2 uppercase tracking-widest">Scroll Down to Explore Regions</p>
         </div>
 
 
         <!-- The Horizontal Track -->
         <div class="horizontal-scroll-container" id="scroll-track">
-            
+
             <!-- Intro Slide -->
-            <div class="w-screen h-full flex-shrink-0 flex items-center justify-center border-r border-white/5 relative">
-                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            <div
+                class="w-screen h-full flex-shrink-0 flex items-center justify-center border-r border-white/5 relative">
+                <div
+                    class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+                </div>
                 <div class="text-center max-w-2xl px-6">
                     <i data-lucide="map" class="w-16 h-16 text-zim-gold mx-auto mb-6"></i>
                     <h3 class="text-5xl font-serif mb-6">10 Unique Provinces</h3>
-                    <p class="text-xl text-gray-400">From the mist-covered mountains of Manicaland to the thundering smoke of Matabeleland North. Swipe to begin the journey.</p>
+                    <p class="text-xl text-gray-400">From the mist-covered mountains of Manicaland to the thundering
+                        smoke of Matabeleland North. Swipe to begin the journey.</p>
                 </div>
             </div>
 
@@ -363,11 +411,15 @@
     <footer class="bg-black py-20 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
             <div class="mb-12 md:mb-0">
-                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">ZIM<span class="text-zim-gold">TOUR</span></span>
+                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">Bushmen <span
+                        class="text-zim-gold">Travel</span></span>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i data-lucide="instagram"></i></a>
-                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i data-lucide="twitter"></i></a>
-                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="twitter"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="linkedin"></i></a>
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-12 text-sm uppercase tracking-widest">
@@ -390,7 +442,8 @@
                 <div class="col-span-2 md:col-span-1">
                     <h4 class="text-zim-gold mb-4 font-bold">Newsletter</h4>
                     <div class="flex border-b border-gray-700 pb-2">
-                        <input type="email" placeholder="Email Address" class="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600">
+                        <input type="email" placeholder="Email Address"
+                            class="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600">
                         <button class="text-zim-gold hover:text-white uppercase font-bold text-xs">Join</button>
                     </div>
                 </div>
@@ -402,7 +455,7 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <script>
         // --- 0. Theme handling ---
 
@@ -457,7 +510,7 @@
         ];
 
         const track = document.getElementById('scroll-track');
-        
+
         // Dynamically create Horizontal Slides
         provincesData.forEach((prov, index) => {
             const slide = document.createElement('div');
@@ -499,7 +552,7 @@
         // --- 2. Custom Cursor Logic ---
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-outline');
-        
+
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
             const posY = e.clientY;
@@ -510,7 +563,7 @@
 
                 cursorOutline.animate({
                     left: `${posX}px`,
-                    top: `${posY}px` 
+                    top: `${posY}px`
                 }, { duration: 500, fill: "forwards" });
             }
         });
@@ -540,17 +593,17 @@
 
         // Preloader Sequence
         const tlLoader = gsap.timeline();
-        
+
         tlLoader.to(".reveal-text", { y: "0%", duration: 1, ease: "power4.out" })
-                .to(".reveal-text-sm", { opacity: 1, duration: 1, delay: -0.5 })
-                .to("#preloader", { y: "-100%", duration: 1.2, ease: "expo.inOut", delay: 0.5 })
-                .to(".hero-anim", { 
-                    y: "0%", 
-                    opacity: 1, 
-                    duration: 1.2, 
-                    stagger: 0.15, 
-                    ease: "power3.out" 
-                }, "-=0.8");
+            .to(".reveal-text-sm", { opacity: 1, duration: 1, delay: -0.5 })
+            .to("#preloader", { y: "-100%", duration: 1.2, ease: "expo.inOut", delay: 0.5 })
+            .to(".hero-anim", {
+                y: "0%",
+                opacity: 1,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: "power3.out"
+            }, "-=0.8");
 
         // Hero Parallax
         gsap.to(".parallax-img", {
@@ -582,7 +635,7 @@
         // Animation for content inside horizontal slides
         sections.forEach((section) => {
             let content = section.querySelector(".slide-content");
-            if(content) {
+            if (content) {
                 gsap.to(content, {
                     y: 0,
                     opacity: 1,
@@ -598,4 +651,5 @@
         });
     </script>
 </body>
+
 </html>

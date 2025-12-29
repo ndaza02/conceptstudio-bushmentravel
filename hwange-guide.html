@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hwange National Park Complete Guide | Bushmen Travel</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/bushmen-logo.png">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'safari-dark': '#0B0F12',
+                        'safari-green': '#1A2E25',
+                        'zim-gold': '#8ac544',
+                        'zim-gold-light': '#f0e78c',
+                        'bush-green': '#599f1a',
+                        'bush-green-light': '#b0ea61',
+                        'bush-sand': '#f2e793',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F12;
+            color: #f8fafc;
+            overflow-x: hidden;
+            cursor: none;
+            /* Hiding default cursor for custom one */
+        }
+
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #8ac544;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(138, 197, 68, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        body:hover .cursor-outline.hovered {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(138, 197, 68, 0.1);
+            border-color: #8ac544;
+            backdrop-filter: blur(2px);
+        }
+
+
+        /* Mobile adjustments: show default cursor and hide custom cursor on small screens */
+        @media (max-width: 768px) {
+            body {
+                cursor: auto;
+            }
+
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+        }
+
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .font-sans {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1A2E25;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8ac544;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #599f1a;
+        }
+
+        /* Glass Navigation */
+        .glass-nav {
+            background: rgba(11, 15, 18, 0.4);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="flex items-center group hover-trigger">
+                    <img src="assets/bushmen-logo.png" alt="Bushmen Travel"
+                        class="h-10 sm:h-12 md:h-16 lg:h-20 w-auto mr-3">
+                    <span class="text-xl sm:text-2xl md:text-3xl font-serif font-bold tracking-wider text-white">Bushmen
+                        <span class="text-zim-gold">Travel</span></span>
+                </a>
+
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-12">
+                        <a href="index.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                        <a href="index.html#tours"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                        <a href="index.html#experiences"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                        <a href="zimbabwe-travel-guide.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Travel
+                            Guide</a>
+                        <a href="journal.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                        <a href="contact.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Contact</a>
+                    </div>
+
+                    <button id="theme-toggle"
+                        class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger"
+                        aria-label="Toggle theme">
+                        <i data-lucide="moon" class="w-4 h-4" id="theme-icon-moon"></i>
+                        <i data-lucide="sun" class="w-4 h-4 hidden" id="theme-icon-sun"></i>
+                    </button>
+
+                    <button id="mobile-menu-toggle" class="md:hidden text-white hover:text-zim-gold transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-6 py-4 space-y-3 bg-safari-dark/95 backdrop-blur-sm border-t border-white/10">
+                <a href="index.html" class="block text-white hover:text-zim-gold transition-colors">Home</a>
+                <a href="index.html#tours" class="block text-white hover:text-zim-gold transition-colors">Tours</a>
+                <a href="index.html#experiences"
+                    class="block text-white hover:text-zim-gold transition-colors">Destinations</a>
+                <a href="zimbabwe-travel-guide.html"
+                    class="block text-white hover:text-zim-gold transition-colors">Travel Guide</a>
+                <a href="journal.html" class="block text-white hover:text-zim-gold transition-colors">Journal</a>
+                <a href="contact.html" class="block text-white hover:text-zim-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-safari-dark/80 via-safari-green/60 to-safari-dark/90 z-10">
+        </div>
+
+        <div class="absolute inset-0">
+            <div
+                class="h-full w-full bg-gradient-to-br from-zim-gold/20 via-bush-green/10 to-zim-gold/20 animate-pulse">
+            </div>
+        </div>
+
+        <div class="relative z-20 text-center px-6 max-w-4xl mx-auto animate-fade-in-up">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold text-zim-gold mb-6">
+                Hwange National Park
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                Zimbabwe's Premier Wildlife Paradise - Home to Africa's Largest Elephant Herds
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#overview"
+                    class="bg-zim-gold text-safari-dark px-8 py-3 rounded-full font-semibold hover:bg-zim-gold-light transition-all transform hover:scale-105">
+                    Discover More
+                </a>
+                <a href="#wildlife"
+                    class="border-2 border-zim-gold text-zim-gold px-8 py-3 rounded-full font-semibold hover:bg-zim-gold hover:text-safari-dark transition-all transform hover:scale-105">
+                    View Wildlife
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">The Wildlife Kingdom</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Hwange National Park ranks among Africa's finest wildlife destinations, boasting the highest
+                    diversity of mammals of any national park in the world. With over 108 species and 19 large
+                    herbivores, it offers unparalleled wildlife viewing opportunities.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <div class="text-zim-gold mb-4">
+                        <i data-lucide="info" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Park Statistics</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Area: 14,651 square kilometers</li>
+                        <li>• Established: 1928 (as Wankie Game Reserve)</li>
+                        <li>• Mammal species: 108 (world's highest diversity)</li>
+                        <li>• Large herbivores: 19 species</li>
+                        <li>• Large carnivores: 8 species</li>
+                        <li>• Bird species: 400+ recorded</li>
+                        <li>• Elephant population: 20,000-75,000</li>
+                    </ul>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <div class="text-zim-gold mb-4">
+                        <i data-lucide="map" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Location & Access</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <p>Located in northwestern Zimbabwe, bordering Botswana's Chobe National Park. Part of the KAZA
+                            (Kavango-Zambezi) Transfrontier Conservation Area - the largest conservation area on Earth.
+                        </p>
+                        <p>Main entrance near Main Camp, 200km from Victoria Falls and 280km from Bulawayo. Accessible
+                            by road and air.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wildlife Highlights -->
+    <section id="wildlife" class="py-20 px-6 bg-safari-green/20">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Wildlife Highlights</h2>
+                <p class="text-lg text-gray-300">Meet the incredible inhabitants of Hwange</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Big Five -->
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg overflow-hidden border border-zim-gold/20">
+                    <div
+                        class="h-32 bg-gradient-to-br from-yellow-900/30 to-amber-900/20 flex items-center justify-center">
+                        <i data-lucide="star" class="w-12 h-12 text-zim-gold"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl text-zim-gold mb-4">The Big Five</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• <strong>Lions:</strong> Numerous prides, excellent sightings</li>
+                            <li>• <strong>Leopards:</strong> Elusive but regularly spotted</li>
+                            <li>• <strong>Elephants:</strong> Africa's largest population</li>
+                            <li>• <strong>Rhinos:</strong> Both black and white rhino present</li>
+                            <li>• <strong>Buffalo:</strong> Large herds throughout the park</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Predators -->
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg overflow-hidden border border-zim-gold/20">
+                    <div
+                        class="h-32 bg-gradient-to-br from-red-900/30 to-orange-900/20 flex items-center justify-center">
+                        <i data-lucide="eye" class="w-12 h-12 text-zim-gold"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl text-zim-gold mb-4">Predators</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• <strong>Wild Dogs:</strong> Endangered, active packs</li>
+                            <li>• <strong>Cheetahs:</strong> Rare but present</li>
+                            <li>• <strong>Spotted Hyenas:</strong> Common and vocal</li>
+                            <li>• <strong>Jackals:</strong> Black-backed and side-striped</li>
+                            <li>• <strong>Serval & Caracal:</strong> Elusive cats</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Herbivores -->
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg overflow-hidden border border-zim-gold/20">
+                    <div
+                        class="h-32 bg-gradient-to-br from-green-900/30 to-emerald-900/20 flex items-center justify-center">
+                        <i data-lucide="deer" class="w-12 h-12 text-zim-gold"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl text-zim-gold mb-4">Herbivores</h3>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• <strong>Giraffe:</strong> Large populations</li>
+                            <li>• <strong>Zebra & Wildebeest:</strong> Mixed herds</li>
+                            <li>• <strong>Kudu & Eland:</strong> Large antelope species</li>
+                            <li>• <strong>Impala & Waterbuck:</strong> Abundant</li>
+                            <li>• <strong>Rare Species:</strong> Roan, sable, tsessebe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bird Life -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Bird Paradise</h2>
+                <p class="text-lg text-gray-300">Over 400 bird species make Hwange a birdwatcher's heaven</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Raptors & Birds of Prey</h3>
+                    <p class="text-gray-300 mb-4">
+                        Hwange hosts around 50 types of raptors, making it one of Africa's premier destinations for
+                        birds of prey. Look for:
+                    </p>
+                    <ul class="space-y-1 text-gray-300 text-sm">
+                        <li>• Martial Eagle, African Hawk Eagle, Bateleur</li>
+                        <li>• Various vulture species including White-backed and Lappet-faced</li>
+                        <li>• Secretary birds, snake eagles, and goshawks</li>
+                        <li>• Owls including Pearl-spotted and Verreaux's Eagle-Owl</li>
+                    </ul>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Other Notable Species</h3>
+                    <p class="text-gray-300 mb-4">
+                        The park's diverse habitats support an incredible variety of birdlife:
+                    </p>
+                    <ul class="space-y-1 text-gray-300 text-sm">
+                        <li>• Lilac-breasted Roller, Southern Ground Hornbill</li>
+                        <li>• Various bee-eaters, kingfishers, and rollers</li>
+                        <li>• Ostriches, kori bustards, and secretary birds</li>
+                        <li>• Waterbirds at pans and dams including herons, storks, and egrets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Time to Visit -->
+    <section class="py-20 px-6 bg-safari-green/20">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Best Time to Visit</h2>
+                <p class="text-lg text-gray-300">Seasonal guide for optimal wildlife viewing</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Dry Season (July-October)</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p><strong>Peak Wildlife Viewing:</strong> Best time for game viewing as vegetation thins and
+                            animals congregate around waterholes.</p>
+                        <p><strong>Elephant Spectacle:</strong> Largest elephant concentrations at pumped waterholes,
+                            incredible interactions.</p>
+                        <p><strong>Predator Action:</strong> Increased predator activity around water sources.</p>
+                        <p><strong>Weather:</strong> Dry, sunny days, cool nights. Minimal rainfall.</p>
+                    </div>
+                </div>
+
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Green Season (November-April)</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p><strong>Lush Landscapes:</strong> Beautiful green vegetation, dramatic skies.</p>
+                        <p><strong>Bird Watching:</strong> Migratory birds arrive, best time for birding.</p>
+                        <p><strong>Baby Animals:</strong> Many species give birth during this period.</p>
+                        <p><strong>Considerations:</strong> Wildlife more dispersed, some roads may be challenging after
+                            heavy rains.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities & Experiences -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Activities & Experiences</h2>
+                <p class="text-lg text-gray-300">Ways to explore Hwange's wilderness</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Game Drives</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p>• Morning and afternoon game drives with expert guides</p>
+                        <p>• Full-day excursions to remote areas of the park</p>
+                        <p>• Night drives available at certain lodges (special permit required)</p>
+                        <p>• Guided drives to specific waterholes known for wildlife concentrations</p>
+                    </div>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Walking Safaris</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p>• Guided walking trails with armed professional guides</p>
+                        <p>• Focus on tracks, smaller wildlife, and flora</p>
+                        <p>• Multi-day walking safaris for the adventurous</p>
+                        <p>• Educational experiences about ecosystem and conservation</p>
+                    </div>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Photography</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p>• Excellent wildlife photography opportunities at waterholes</p>
+                        <p>• Golden hour drives for dramatic lighting</p>
+                        <p>• Hide photography at selected locations</p>
+                        <p>• Bird photography with over 400 species to capture</p>
+                    </div>
+                </div>
+
+                <div class="bg-safari-green/30 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Conservation Experiences</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p>• Visit to anti-poaching units (by arrangement)</p>
+                        <p>• Learn about waterhole pumping systems</p>
+                        <p>• Community conservation project visits</p>
+                        <p>• Research station tours (seasonal availability)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Information -->
+    <section class="py-20 px-6 bg-safari-green/20">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Practical Information</h2>
+                <p class="text-lg text-gray-300">Everything you need for your Hwange safari</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Getting There</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">By Road</h4>
+                            <p>200km from Victoria Falls (2.5 hours), 280km from Bulawayo (3.5 hours). 4x4 recommended
+                                but not essential in dry season.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">By Air</h4>
+                            <p>Charter flights available to Main Camp airstrip. Scheduled flights from Victoria Falls
+                                possible.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">Park Entrances</h4>
+                            <p>Main Camp (primary), Ngweshla, Sinamatella. Check opening times and road conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-safari-dark/50 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                    <h3 class="font-serif text-xl text-zim-gold mb-4">Accommodation</h3>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">Luxury Lodges</h4>
+                            <p>Somalisa, The Hide, Nehimba, Linkwasha - exclusive luxury with excellent guides.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">Mid-Range</h4>
+                            <p>Hwange Safari Lodge, Ivory Lodge, Khwai - comfortable options with good facilities.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-zim-gold-light mb-1">Camping</h4>
+                            <p>Main Camp, Sinamatella, and various bush camps. Self-catering options available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-safari-dark/50 backdrop-blur-sm rounded-lg p-6 border border-zim-gold/20">
+                <h3 class="font-serif text-xl text-zim-gold mb-4">Essential Tips</h3>
+                <div class="grid md:grid-cols-2 gap-6 text-gray-300 text-sm">
+                    <div>
+                        <h4 class="font-semibold text-zim-gold-light mb-2">What to Bring</h4>
+                        <ul class="space-y-1">
+                            <li>• Neutral-colored clothing (khaki, green, brown)</li>
+                            <li>• Warm layers for early morning/night drives</li>
+                            <li>• Binoculars and camera equipment</li>
+                            <li>• Sun protection and insect repellent</li>
+                            <li>• Reusable water bottle</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-zim-gold-light mb-2">Park Regulations</h4>
+                        <ul class="space-y-1">
+                            <li>• Stay in vehicles unless at designated areas</li>
+                            <li>• No feeding wildlife</li>
+                            <li>• Keep to speed limits (40km/h)</li>
+                            <li>• Park entry fees: $15-30 per person</li>
+                            <li>• Vehicle fees: $10-20 per vehicle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-6 bg-gradient-to-r from-zim-gold/20 to-bush-green/20">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="font-serif text-4xl md:text-5xl text-zim-gold mb-6">Experience Hwange</h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Let Bushmen Travel craft your perfect Hwange adventure, from luxury lodges to authentic camping
+                experiences.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html"
+                    class="bg-zim-gold text-safari-dark px-8 py-3 rounded-full font-semibold hover:bg-zim-gold-light transition-all transform hover:scale-105">
+                    Plan Your Safari
+                </a>
+                <a href="zimbabwe-travel-guide.html"
+                    class="border-2 border-zim-gold text-zim-gold px-8 py-3 rounded-full font-semibold hover:bg-zim-gold hover:text-safari-dark transition-all transform hover:scale-105">
+                    More Destinations
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
+            <div class="mb-12 md:mb-0">
+                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">Bushmen <span
+                        class="text-zim-gold">Travel</span></span>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="twitter"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12 text-sm uppercase tracking-widest">
+                <div>
+                    <h4 class="text-zim-gold mb-4 font-bold">Explore</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li><a href="#" class="hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hotels</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safaris</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-zim-gold mb-4 font-bold">Company</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-zim-gold mb-4 font-bold">Newsletter</h4>
+                    <div class="flex border-b border-gray-700 pb-2">
+                        <input type="email" placeholder="Email Address"
+                            class="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600">
+                        <button class="text-zim-gold hover:text-white uppercase font-bold text-xs">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // --- 0. Theme handling ---
+
+        const rootHtml = document.documentElement;
+        const storedTheme = localStorage.getItem('bushmen-theme');
+
+        if (storedTheme === 'light' || storedTheme === 'dark') {
+            rootHtml.setAttribute('data-theme', storedTheme);
+        } else {
+            rootHtml.setAttribute('data-theme', 'dark');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIconMoon = document.getElementById('theme-icon-moon');
+        const themeIconSun = document.getElementById('theme-icon-sun');
+
+        function updateThemeIcons(theme) {
+            if (!themeIconMoon || !themeIconSun) return;
+            if (theme === 'light') {
+                themeIconMoon.classList.add('hidden');
+                themeIconSun.classList.remove('hidden');
+            } else {
+                themeIconMoon.classList.remove('hidden');
+                themeIconSun.classList.add('hidden');
+            }
+        }
+
+        updateThemeIcons(rootHtml.getAttribute('data-theme'));
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = rootHtml.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+                rootHtml.setAttribute('data-theme', newTheme);
+                localStorage.setItem('bushmen-theme', newTheme);
+                updateThemeIcons(newTheme);
+            });
+        }
+
+        // --- 1. Custom Cursor ---
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        if (cursorDot && cursorOutline) {
+            document.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                cursorOutline.style.left = `${posX}px`;
+                cursorOutline.style.top = `${posY}px`;
+            });
+
+            document.addEventListener('mousedown', () => {
+                cursorOutline.classList.add('hovered');
+            });
+
+            document.addEventListener('mouseup', () => {
+                cursorOutline.classList.remove('hovered');
+            });
+
+            const hoverElements = document.querySelectorAll('.hover-trigger');
+            hoverElements.forEach(element => {
+                element.addEventListener('mouseenter', () => cursorOutline.classList.add('hovered'));
+                element.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
+            });
+        }
+
+        // --- 2b. Mobile navigation toggle ---
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // --- 3. GSAP Animations ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

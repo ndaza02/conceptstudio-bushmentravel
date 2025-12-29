@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZimTour | Harare Metro</title>
+    <title>Harare Metro | Bushmen Travel</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/bushmen-logo.png">
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -54,17 +57,20 @@
             z-index: 9999;
             pointer-events: none;
         }
+
         .cursor-dot {
             width: 8px;
             height: 8px;
             background-color: #8ac544;
         }
+
         .cursor-outline {
             width: 40px;
             height: 40px;
             border: 1px solid rgba(138, 197, 68, 0.5);
             transition: width 0.2s, height 0.2s, background-color 0.2s;
         }
+
         body:hover .cursor-outline.hovered {
             width: 80px;
             height: 80px;
@@ -77,6 +83,7 @@
             body {
                 cursor: auto;
             }
+
             .cursor-dot,
             .cursor-outline {
                 display: none;
@@ -89,6 +96,7 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+
         .glass-nav {
             background: rgba(11, 15, 18, 0.8);
             backdrop-filter: blur(12px);
@@ -104,9 +112,11 @@
             justify-content: center;
             align-items: center;
         }
+
         .loader-text {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
+
         .text-outline {
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
             color: transparent;
@@ -116,13 +126,20 @@
             overflow: hidden;
             white-space: nowrap;
         }
+
         .marquee-content {
             display: inline-block;
             animation: marquee 30s linear infinite;
         }
+
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
 
@@ -174,6 +191,7 @@
         }
     </style>
 </head>
+
 <body class="antialiased">
 
     <div class="cursor-dot"></div>
@@ -194,29 +212,42 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center h-24">
                 <a href="index.html" class="flex items-center group hover-trigger">
-                    <img src="assets/bushmen-logo.png" alt="Bushmen Travel" class="h-10 sm:h-12 md:h-16 lg:h-20 w-auto mr-3">
-                    <span class="text-xl sm:text-2xl md:text-3xl font-serif font-bold tracking-wider text-white">Bushmen <span class="text-zim-gold">Travel</span></span>
+                    <img src="assets/bushmen-logo.png" alt="Bushmen Travel"
+                        class="h-10 sm:h-12 md:h-16 lg:h-20 w-auto mr-3">
+                    <span class="text-xl sm:text-2xl md:text-3xl font-serif font-bold tracking-wider text-white">Bushmen
+                        <span class="text-zim-gold">Travel</span></span>
                 </a>
 
                 <div class="flex items-center space-x-4">
                     <div class="hidden md:flex items-center space-x-12">
-                        <a href="index.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
-                        <a href="index.html#tours" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Tours</a>
-                        <a href="provinces.html" class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
-                        <a href="journal.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Journal</a>
-                        <a href="contact.html" class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Contact</a>
+                        <a href="index.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                        <a href="index.html#tours"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                        <a href="provinces.html"
+                            class="text-sm uppercase tracking-widest text-zim-gold hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                        <a href="journal.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                                                <a href="zimbabwe-travel-guide.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Travel Guide</a>
+                        <a href="contact.html"
+                            class="text-sm uppercase tracking-widest hover:text-zim-gold transition-colors hover-trigger">Contact</a>
                     </div>
 
-                    <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger" aria-label="Toggle theme">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" class="lucide lucide-moon w-4 h-4 hidden" id="theme-icon-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" class="lucide lucide-sun w-4 h-4" id="theme-icon-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                    <button id="theme-toggle"
+                        class="inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger"
+                        aria-label="Toggle theme">
+                        <i data-lucide="moon" class="w-4 h-4" id="theme-icon-moon"></i>
+                        <i data-lucide="sun" class="w-4 h-4 hidden" id="theme-icon-sun"></i>
                     </button>
 
-                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
+                    <a href="https://wa.me/263772787909" target="_blank" rel="noopener noreferrer"
+                        class="hidden md:inline-flex bg-zim-gold text-black px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300 hover-trigger">
                         WhatsApp Us
                     </a>
 
-                    <button id="mobile-menu-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger">
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-white hover-trigger">
                         <i data-lucide="menu" class="w-5 h-5"></i>
                     </button>
                 </div>
@@ -224,11 +255,18 @@
 
             <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 pb-4">
                 <div class="pt-4 space-y-3">
-                    <a href="index.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Home</a>
-                    <a href="index.html#tours" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Tours</a>
-                    <a href="provinces.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
-                    <a href="journal.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Journal</a>
-                    <a href="contact.html" class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Contact</a>
+                    <a href="index.html"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Home</a>
+                    <a href="index.html#tours"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Tours</a>
+                    <a href="provinces.html"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Destinations</a>
+                    <a href="journal.html"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Journal</a>
+                                        <a href="zimbabwe-travel-guide.html"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Travel Guide</a>
+                    <a href="contact.html"
+                        class="block text-sm uppercase tracking-widest text-gray-300 hover:text-zim-gold transition-colors hover-trigger">Contact</a>
                 </div>
             </div>
         </div>
@@ -238,31 +276,38 @@
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-safari-dark z-10"></div>
             <div class="absolute inset-0 bg-black/40 z-0"></div>
-            <img src="assets/harare-cityscape.png" 
-                 class="w-full h-full object-cover parallax-img scale-110" alt="Harare Cityscape">
+            <img src="assets/harare-cityscape.png" class="w-full h-full object-cover parallax-img scale-110"
+                alt="Harare Cityscape">
         </div>
 
         <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
             <div class="overflow-hidden mb-2">
-                <p class="text-zim-gold text-sm md:text-base tracking-[0.3em] uppercase font-semibold hero-anim translate-y-full">
+                <p
+                    class="text-zim-gold text-sm md:text-base tracking-[0.3em] uppercase font-semibold hero-anim translate-y-full">
                     Urban stories, hidden courtyards, golden light
                 </p>
             </div>
             <div class="overflow-hidden my-4">
-                <h1 class="text-5xl md:text-7xl font-serif font-medium text-white leading-none hero-anim translate-y-full">
+                <h1
+                    class="text-5xl md:text-7xl font-serif font-medium text-white leading-none hero-anim translate-y-full">
                     Harare Metro Reads
                 </h1>
             </div>
             <div class="overflow-hidden mb-8">
                 <p class="text-gray-300 max-w-2xl mx-auto hero-anim opacity-0">
-                    Curated essays, neighbourhood guides, and slow journalism pieces that explore Harare beyond the business district.
+                    Curated essays, neighbourhood guides, and slow journalism pieces that explore Harare beyond the
+                    business district.
                 </p>
             </div>
 
             <div class="flex flex-wrap justify-center gap-3 mt-4 hero-anim opacity-0">
-                <span class="px-4 py-1 text-xs uppercase tracking-[0.2em] border border-white/10 rounded-full text-gray-300">Culture</span>
-                <span class="px-4 py-1 text-xs uppercase tracking-[0.2em] border border-white/10 rounded-full text-gray-300">Design</span>
-                <span class="px-4 py-1 text-xs uppercase tracking-[0.2em] border border-white/10 rounded-full text-gray-300">City Guides</span>
+                <span
+                    class="px-4 py-1 text-xs uppercase tracking-[0.2em] border border-white/10 rounded-full text-gray-300">Culture</span>
+                <span
+                    class="px-4 py-1 text-xs uppercase tracking-[0.2em] border border-white/10 rounded-full text-gray-300">Design</span>
+                <span
+                    class="px-4 py-1 text-xs uppercase tracking-[0.2em] border border-white/10 rounded-full text-gray-300">City
+                    Guides</span>
             </div>
         </div>
     </header>
@@ -270,12 +315,12 @@
     <div class="bg-zim-gold text-safari-dark py-3 border-y border-black relative z-30">
         <div class="marquee-container">
             <div class="marquee-content font-bold text-sm uppercase tracking-widest">
-                <span class="mx-8">â— Sunrise over Samora Machel Avenue</span>
-                <span class="mx-8">â— Mukuvisi Woodlands walking trails</span>
-                <span class="mx-8">â— New gallery openings in the CBD</span>
-                <span class="mx-8">â— Coffee culture in Avondale & Borrowdale</span>
-                <span class="mx-8">â— Weekend markets at Harare Gardens</span>
-                <span class="mx-8">â— Rooftop sundowners across the city</span>
+                <span class="mx-8">— Sunrise over Samora Machel Avenue</span>
+                <span class="mx-8">— Mukuvisi Woodlands walking trails</span>
+                <span class="mx-8">— New gallery openings in the CBD</span>
+                <span class="mx-8">— Coffee culture in Avondale & Borrowdale</span>
+                <span class="mx-8">— Weekend markets at Harare Gardens</span>
+                <span class="mx-8">— Rooftop sundowners across the city</span>
             </div>
         </div>
     </div>
@@ -285,27 +330,37 @@
             <div class="flex flex-col lg:flex-row justify-between items-start gap-10 mb-16">
                 <div class="max-w-xl">
                     <p class="text-xs uppercase tracking-[0.3em] text-zim-gold mb-4">Harare Metro</p>
-                    <h2 class="text-4xl md:text-6xl font-serif mb-6">City <span class="italic text-zim-gold">Briefings</span></h2>
+                    <h2 class="text-4xl md:text-6xl font-serif mb-6">City <span
+                            class="italic text-zim-gold">Briefings</span></h2>
                     <p class="text-gray-400 leading-relaxed">
-                        A slow scroll through Harare's avenues, townships, galleries, and hidden courtyards. Each story is crafted for
+                        A slow scroll through Harare's avenues, townships, galleries, and hidden courtyards. Each story
+                        is crafted for
                         travellers who want to understand the rhythm of the city before they arrive.
                     </p>
                 </div>
                 <div class="flex flex-wrap gap-3 lg:justify-end">
-                    <button class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-zim-gold text-zim-gold hover:bg-zim-gold hover:text-black transition-colors hover-trigger">All</button>
-                    <button class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-white/10 text-gray-300 hover:border-zim-gold hover:text-zim-gold transition-colors hover-trigger">City Guides</button>
-                    <button class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-white/10 text-gray-300 hover:border-zim-gold hover:text-zim-gold transition-colors hover-trigger">Culture</button>
-                    <button class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-white/10 text-gray-300 hover:border-zim-gold hover:text-zim-gold transition-colors hover-trigger">Architecture</button>
+                    <button
+                        class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-zim-gold text-zim-gold hover:bg-zim-gold hover:text-black transition-colors hover-trigger">All</button>
+                    <button
+                        class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-white/10 text-gray-300 hover:border-zim-gold hover:text-zim-gold transition-colors hover-trigger">City
+                        Guides</button>
+                    <button
+                        class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-white/10 text-gray-300 hover:border-zim-gold hover:text-zim-gold transition-colors hover-trigger">Culture</button>
+                    <button
+                        class="px-4 py-2 text-xs uppercase tracking-[0.2em] rounded-full border border-white/10 text-gray-300 hover:border-zim-gold hover:text-zim-gold transition-colors hover-trigger">Architecture</button>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                <article class="glass-panel rounded-2xl p-8 flex flex-col lg:flex-row gap-8 article-card hover:bg-white/5 cursor-pointer transition-colors" data-article="harare-48-hours-cbd.html">
+                <article
+                    class="glass-panel rounded-2xl p-8 flex flex-col lg:flex-row gap-8 article-card hover:bg-white/5 cursor-pointer transition-colors"
+                    data-article="harare-48-hours-cbd.html">
                     <div class="flex-1">
                         <p class="text-xs uppercase tracking-[0.25em] text-zim-gold mb-3">City Guide</p>
                         <h3 class="text-3xl font-serif mb-4">48 Hours in the Harare CBD</h3>
                         <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            From rush hour on Julius Nyerere Way to blue-hour on rooftop terraces, this guide walks you through
+                            From rush hour on Julius Nyerere Way to blue-hour on rooftop terraces, this guide walks you
+                            through
                             a weekend of galleries, craft markets, and quiet corners for espresso.
                         </p>
                         <div class="flex items-center text-xs text-gray-500 space-x-4">
@@ -315,20 +370,24 @@
                             </span>
                             <span class="inline-flex items-center">
                                 <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
-                                CBD Â· Avenues
+                                CBD · Avenues
                             </span>
                         </div>
                     </div>
-                    <div class="w-full lg:w-64 h-40 lg:h-56 rounded-xl overflow-hidden bg-cover bg-center" style="background-image: url('assets/harare-cityscape.png');"></div>
+                    <div class="w-full lg:w-64 h-40 lg:h-56 rounded-xl overflow-hidden bg-cover bg-center"
+                        style="background-image: url('assets/harare-cityscape.png');"></div>
                 </article>
 
                 <div class="space-y-6 lg:col-span-1">
-                    <article class="glass-panel rounded-2xl p-6 h-full flex flex-col justify-between article-card hover:bg-white/5 cursor-pointer transition-colors" data-article="harare-after-dark.html">
+                    <article
+                        class="glass-panel rounded-2xl p-6 h-full flex flex-col justify-between article-card hover:bg-white/5 cursor-pointer transition-colors"
+                        data-article="harare-after-dark.html">
                         <div>
                             <p class="text-xs uppercase tracking-[0.25em] text-zim-gold mb-2">Culture</p>
                             <h3 class="text-xl font-serif mb-3">Harare After Dark</h3>
                             <p class="text-gray-400 text-sm leading-relaxed">
-                                Jazz basements, rooftop lounges, and roadside braai spots that define Harare's night-time character.
+                                Jazz basements, rooftop lounges, and roadside braai spots that define Harare's
+                                night-time character.
                             </p>
                         </div>
                         <div class="flex items-center justify-between mt-6 text-xs text-gray-500">
@@ -336,39 +395,45 @@
                                 <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
                                 5 min read
                             </span>
-                            <span>Avondale Â· Borrowdale</span>
+                            <span>Avondale · Borrowdale</span>
                         </div>
                     </article>
                 </div>
 
                 <div class="space-y-6">
-                    <article class="glass-panel rounded-2xl p-6 article-card hover:bg-white/5 cursor-pointer transition-colors" data-article="harare-green-harare.html">
+                    <article
+                        class="glass-panel rounded-2xl p-6 article-card hover:bg-white/5 cursor-pointer transition-colors"
+                        data-article="harare-green-harare.html">
                         <p class="text-xs uppercase tracking-[0.25em] text-zim-gold mb-2">Slow Spaces</p>
                         <h3 class="text-xl font-serif mb-3">Green Harare</h3>
                         <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                            A walk through Harare Gardens, Mukuvisi Woodlands, and hidden pocket parks perfect for late-afternoon picnics.
+                            A walk through Harare Gardens, Mukuvisi Woodlands, and hidden pocket parks perfect for
+                            late-afternoon picnics.
                         </p>
                         <div class="flex items-center text-xs text-gray-500 space-x-4">
                             <span class="inline-flex items-center">
                                 <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
                                 6 min read
                             </span>
-                            <span>Woodlands Â· Highlands</span>
+                            <span>Woodlands · Highlands</span>
                         </div>
                     </article>
 
-                    <article class="glass-panel rounded-2xl p-6 article-card hover:bg-white/5 cursor-pointer transition-colors" data-article="harare-modernist-facades.html">
+                    <article
+                        class="glass-panel rounded-2xl p-6 article-card hover:bg-white/5 cursor-pointer transition-colors"
+                        data-article="harare-modernist-facades.html">
                         <p class="text-xs uppercase tracking-[0.25em] text-zim-gold mb-2">Design</p>
                         <h3 class="text-xl font-serif mb-3">Modernist Facades of Harare</h3>
                         <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                            A visual essay on the mid-century buildings that shape Harare's skyline and how they are being reimagined.
+                            A visual essay on the mid-century buildings that shape Harare's skyline and how they are
+                            being reimagined.
                         </p>
                         <div class="flex items-center text-xs text-gray-500 space-x-4">
                             <span class="inline-flex items-center">
                                 <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
                                 8 min read
                             </span>
-                            <span>CBD Â· Kopje</span>
+                            <span>CBD · Kopje</span>
                         </div>
                     </article>
                 </div>
@@ -379,11 +444,15 @@
     <footer class="bg-black py-20 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
             <div class="mb-12 md:mb-0">
-                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">ZIM<span class="text-zim-gold">TOUR</span></span>
+                <span class="text-3xl font-serif font-bold tracking-wider text-white mb-6 block">Bushmen <span
+                        class="text-zim-gold">Travel</span></span>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i data-lucide="instagram"></i></a>
-                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i data-lucide="twitter"></i></a>
-                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="twitter"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-zim-gold transition-colors"><i
+                            data-lucide="linkedin"></i></a>
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-12 text-sm uppercase tracking-widest">
@@ -406,7 +475,8 @@
                 <div class="col-span-2 md:col-span-1">
                     <h4 class="text-zim-gold mb-4 font-bold">Newsletter</h4>
                     <div class="flex border-b border-gray-700 pb-2">
-                        <input type="email" placeholder="Email Address" class="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600">
+                        <input type="email" placeholder="Email Address"
+                            class="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600">
                         <button class="text-zim-gold hover:text-white uppercase font-bold text-xs">Join</button>
                     </div>
                 </div>
@@ -500,15 +570,15 @@
         const tlLoader = gsap.timeline();
 
         tlLoader.to('.reveal-text', { y: '0%', duration: 1, ease: 'power4.out' })
-                .to('.reveal-text-sm', { opacity: 1, duration: 1, delay: -0.5 })
-                .to('#preloader', { y: '-100%', duration: 1.2, ease: 'expo.inOut', delay: 0.5 })
-                .to('.hero-anim', {
-                    y: '0%',
-                    opacity: 1,
-                    duration: 1.2,
-                    stagger: 0.15,
-                    ease: 'power3.out'
-                }, '-=0.8');
+            .to('.reveal-text-sm', { opacity: 1, duration: 1, delay: -0.5 })
+            .to('#preloader', { y: '-100%', duration: 1.2, ease: 'expo.inOut', delay: 0.5 })
+            .to('.hero-anim', {
+                y: '0%',
+                opacity: 1,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: 'power3.out'
+            }, '-=0.8');
 
         gsap.to('.parallax-img', {
             yPercent: 20,
@@ -541,4 +611,5 @@
         });
     </script>
 </body>
+
 </html>
