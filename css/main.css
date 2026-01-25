@@ -1,0 +1,174 @@
+/* BUSHMEN SAFARIS - MAIN DESIGN SYSTEM */
+
+/* --- Core Aesthetics --- */
+body {
+    background-color: #0B0F12;
+    color: #f8fafc;
+    overflow-x: hidden;
+    cursor: none; /* Hiding default cursor for custom one */
+}
+
+/* Accessibility: Skip Navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #8ac544;
+    color: #000;
+    padding: 8px;
+    z-index: 10001;
+    transition: top 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Custom Cursor */
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #8ac544;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(138, 197, 68, 0.5);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+body:hover .cursor-outline.hovered {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(138, 197, 68, 0.1);
+    border-color: #8ac544;
+    backdrop-filter: blur(2px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+}
+
+/* Smooth Scroll Behavior */
+.horizontal-scroll-container {
+    width: 500%; 
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* Glassmorphism */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.glass-nav {
+    background: rgba(11, 15, 18, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #0B0F12;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader-text {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.char {
+    transform: translateY(115%);
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Typography */
+.text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    color: transparent;
+}
+
+/* Marquee */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.marquee-content {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Light theme overrides */
+html[data-theme='light'] body {
+    background-color: #f9fafb;
+    color: #0f172a;
+}
+html[data-theme='light'] .glass-nav {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+}
+html[data-theme='light'] .glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(15, 23, 42, 0.06);
+}
+html[data-theme='light'] .bg-safari-dark {
+    background-color: #f9fafb !important;
+}
+html[data-theme='light'] footer.bg-black {
+    background-color: #0b1120 !important;
+}
+html[data-theme='light'] .text-white {
+    color: #0f172a !important;
+}
+html[data-theme='light'] .text-white/50 {
+    color: rgba(15, 23, 42, 0.5) !important;
+}
+html[data-theme='light'] .text-gray-300 {
+    color: #4b5563 !important;
+}
+html[data-theme='light'] .text-gray-400 {
+    color: #6b7280 !important;
+}
+html[data-theme='light'] .border-white/10 {
+    border-color: rgba(148, 163, 184, 0.4) !important;
+}
+html[data-theme='light'] #provinces .glass-panel,
+html[data-theme='light'] #hero-intro-cards .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+html[data-theme='light'] #provinces .text-white {
+    color: #ffffff !important;
+}
